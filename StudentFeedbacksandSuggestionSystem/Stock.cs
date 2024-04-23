@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TESTING
+{
+    public partial class Stock : Form
+    {
+        public Stock(string username)
+        {
+            InitializeComponent();
+            userlbl.Text = "Logged in as: " + username;
+            greetingslbl.Text = $"Welcome {username}!";
+        }
+    }
+}
