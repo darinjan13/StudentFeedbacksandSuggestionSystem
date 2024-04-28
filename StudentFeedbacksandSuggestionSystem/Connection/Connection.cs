@@ -7,12 +7,12 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.OleDb;
 
-namespace TESTING.Connection
+namespace StudentFeedbacksandSuggestionSystem.Connection
 {
     internal class Connection
     {
         public static OleDbConnection conn;
-        private static string dbconnect = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + Application.StartupPath + "\\Customer.accdb";
+        private static string dbconnect = "Provider=Microsoft.ACE.OleDb.12.0; Data Source=StudentFeedbackAndSuggestionsDB.accdb";
 
         public static void DB()
         {

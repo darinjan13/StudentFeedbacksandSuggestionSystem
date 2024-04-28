@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.OleDb;
 
-namespace TESTING.DBFunctions
+namespace StudentFeedbacksandSuggestionSystem.DBFunctions
 {
     internal class GlobalDeclaration
     {

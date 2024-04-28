@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TESTING
+namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 {
-    public partial class Stock : Form
+    public partial class Profile : Form
     {
-        public Stock(string username)
+        public Profile()
         {
             InitializeComponent();
-            userlbl.Text = "Logged in as: " + username;
-            greetingslbl.Text = $"Welcome {username}!";
         }
     }
 }

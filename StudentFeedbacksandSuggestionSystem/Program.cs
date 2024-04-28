@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TESTING
+namespace StudentFeedbacksandSuggestionSystem
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+
+            MainForm mainForm = new MainForm();
+            FormManager formManager = new FormManager(mainForm); // Create an instance of FormManager
+
+            // Start the application using FormManager
+            formManager.Start();
+
+            Application.Run();
         }
     }
 }

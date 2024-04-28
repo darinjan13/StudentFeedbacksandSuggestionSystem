@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data;
+using System.Web.Security;
 
 
-namespace TESTING.DBFunction
+namespace StudentFeedbacksandSuggestionSystem.DBFunction
 {
     internal class DBFunction
     {
         //used for database transaction
         public static string gen = "";
-        public static OleDbConnection conn;
         public static OleDbCommand command;
         public static OleDbDataReader reader;
 
@@ -34,11 +34,97 @@ namespace TESTING.DBFunction
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 Connection.Connection.conn.Close();
             }
         }
 
-        /*public static void ModifyRecord(string updates)
+        public static void InsertIntoUsers(string username, string password, string role)
+        {
+            try
+            {
+                // Define the SQL query
+                string query = "INSERT INTO users ( username, [password], role ) VALUES (@username, @password, @role)";
+
+                Connection.Connection.DB();
+                // Create a command object
+                OleDbCommand command = new OleDbCommand(query, Connection.Connection.conn);
+
+                // Add parameters
+                command.Parameters.AddWithValue("@username", role);
+                command.Parameters.AddWithValue("@password", username);
+                command.Parameters.AddWithValue("@role", password);
+
+                // Execute the query
+                int rowsAffected = command.ExecuteNonQuery();
+
+                // Close the connection
+                Connection.Connection.conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show(query);
+                }
+                else
+                {
+                    MessageBox.Show("No rows affected");
+                }
+            }
+            catch (Exception ex)
+            {
+                Connection.Connection.conn.Close();
+                MessageBox.Show($"Errors: {ex.Message}");
+            }
+        }
+
+        public static bool Register(string firstname, string lastname, int age, string email, string username, string password, string role)
+        {
+            bool success = false;
+            try
+            {
+                // Define the SQL query
+                string query = "INSERT INTO users ( firstname, lastname, age, email, username, [password], role ) VALUES (@firstname, @lastname, @age, @email, @username, @password, @role)";
+
+                Connection.Connection.DB();
+                // Create a command object
+                OleDbCommand command = new OleDbCommand(query, Connection.Connection.conn);
+
+                // Add parameters
+                command.Parameters.AddWithValue("@firstname", firstname);
+                command.Parameters.AddWithValue("@lastname", lastname);
+                command.Parameters.AddWithValue("@age", age);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@role", role);
+
+                // Execute the query
+                int rowsAffected = command.ExecuteNonQuery();
+
+                // Close the connection
+                Connection.Connection.conn.Close();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show(query);
+                    success = true;
+                }
+                else
+                {
+                    MessageBox.Show("No rows affected");
+                    success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Connection.Connection.conn.Close();
+                MessageBox.Show("Please enter required details.");
+            }
+            return success;
+
+        }
+
+        public static void ModifyRecord(string updates)
         {
             try
             {
@@ -53,7 +139,7 @@ namespace TESTING.DBFunction
                 Connection.Connection.conn.Close();
                 MessageBox.Show("Error ---->" + updates + ex.Message);
             }
-        }*/
+        }
 
     }
 }
