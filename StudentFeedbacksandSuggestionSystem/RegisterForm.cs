@@ -12,9 +12,11 @@ namespace StudentFeedbacksandSuggestionSystem
 {
     public partial class RegisterForm : Form
     {
-        public RegisterForm()
+        MainForm mainForm;
+        public RegisterForm(MainForm mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
         }
 
         private void register_Click(object sender, EventArgs e)
@@ -25,13 +27,14 @@ namespace StudentFeedbacksandSuggestionSystem
                 string lastname = lastNameTxtBox.Texts;
                 int age = Convert.ToInt32(ageTxtBox.Texts);
                 string email = emailTxtBox.Texts;
+                string gender = genderComboBox.Texts;
                 string username = userNameTxtBox.Texts;
                 string password = passwordTxtBox.Texts;
-                bool registered = DBFunction.DBFunction.Register(firstname, lastname, age, email, username, password, "student");
+                bool registered = DBFunction.DBFunction.Register(firstname, lastname, age, email, gender, username, password, "student");
 
                 if (registered)
                 {
-                    this.Close();
+                    
                 }
             } catch (FormatException)
             {
@@ -42,7 +45,7 @@ namespace StudentFeedbacksandSuggestionSystem
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            mainForm.LoadLogin();
         }
     }
 }

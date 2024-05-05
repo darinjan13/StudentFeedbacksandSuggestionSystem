@@ -6,13 +6,13 @@ namespace StudentFeedbacksandSuggestionSystem
     public class FormManager
     {
         private readonly MainForm _mainForm;
-        private readonly StudentDashboard _studentDashboard;
+        private StudentDashboard _studentDashboard;
         private readonly AdminDashboard _adminDashboard;
+        private UserInfo userInfo;
 
         public FormManager(MainForm mainForm)
         {
             _mainForm = mainForm;
-            _studentDashboard = new StudentDashboard();
             _adminDashboard = new AdminDashboard();
             WireUpEvents(); // Initialize event handlers
         }
@@ -20,25 +20,30 @@ namespace StudentFeedbacksandSuggestionSystem
         private void WireUpEvents()
         {
             // Attach event handlers for form navigation
-            _mainForm.LoginRequested += role =>
+            _mainForm.LoginRequested += userInfo =>
             {
-                if (role != null)
+                if (userInfo.Role != null)
                 {
-                    if (role == "admin")
+                    if (userInfo.Role == "admin")
                     {
                         ShowAdminDashboard();
                     }
-                    else if (role == "student")
+                    else if (userInfo.Role == "student")
                     {
+                        this.userInfo = userInfo;
                         ShowStudentDashboard();
                     }
                 }
             };
-            _studentDashboard.LogoutRequested += Logout;
-            _adminDashboard.LogoutRequested += Logout;
+            if (_studentDashboard != null)
+            {
+                _studentDashboard.LogoutRequested += Logout;
+                _studentDashboard.FormClosed += Exit;
+            }
+                _adminDashboard.LogoutRequested += Logout;
+                _adminDashboard.FormClosed += Exit;
+
             _mainForm.FormClosed += Exit;
-            _studentDashboard.FormClosed += Exit;
-            _adminDashboard.FormClosed += Exit;
         }
 
         public void Start()
@@ -49,6 +54,12 @@ namespace StudentFeedbacksandSuggestionSystem
         private void ShowStudentDashboard()
         {
             _mainForm.Hide();
+
+            // Create a new StudentDashboard instance and attach event handlers
+            _studentDashboard = new StudentDashboard(userInfo);
+            _studentDashboard.LogoutRequested += Logout;
+            _studentDashboard.FormClosed += Exit;
+
             _studentDashboard.Show();
         }
 
@@ -67,12 +78,15 @@ namespace StudentFeedbacksandSuggestionSystem
             _mainForm.Show();
 
             // Close the dashboard form
+            if (_studentDashboard != null)
+            {
             _studentDashboard.Hide();
+
+            }
             _adminDashboard.Hide();
         }
         private void Exit(object sender, FormClosedEventArgs e)
         {
-            // Close the MainForm when the StudentDashboard is closed
             Application.Exit();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace StudentFeedbacksandSuggestionSystem
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -125,6 +125,7 @@
             this.txtusername.TabIndex = 16;
             this.txtusername.Texts = "";
             this.txtusername.UnderlinedStyle = false;
+            this.txtusername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
             // txtpassword
             // 
@@ -147,8 +148,9 @@
             this.txtpassword.TabIndex = 17;
             this.txtpassword.Texts = "";
             this.txtpassword.UnderlinedStyle = false;
+            this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,7 +167,7 @@
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

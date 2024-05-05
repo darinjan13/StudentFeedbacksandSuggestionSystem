@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.homeButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.profileButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.settingsButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.logoutButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +47,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 55);
+            this.panel1.Size = new System.Drawing.Size(1054, 55);
             this.panel1.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -57,26 +57,10 @@
             this.flowLayoutPanel1.Controls.Add(this.settingsButton);
             this.flowLayoutPanel1.Controls.Add(this.logoutButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(360, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(430, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(624, 55);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(69, 55);
-            this.panel2.TabIndex = 0;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 55);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(984, 556);
-            this.mainPanel.TabIndex = 5;
             // 
             // homeButton
             // 
@@ -162,11 +146,27 @@
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(69, 55);
+            this.panel2.TabIndex = 0;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 55);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1054, 556);
+            this.mainPanel.TabIndex = 5;
+            // 
             // StudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(1054, 611);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.Name = "StudentDashboard";

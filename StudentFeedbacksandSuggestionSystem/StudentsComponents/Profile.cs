@@ -12,9 +12,10 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 {
     public partial class Profile : Form
     {
-        public Profile()
+        public Profile(UserInfo userInfo)
         {
             InitializeComponent();
+            fullName.Text = userInfo.Firstname + " " + userInfo.Lastname;
         }
     }
 }

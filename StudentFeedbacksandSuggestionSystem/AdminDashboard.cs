@@ -24,7 +24,7 @@ namespace StudentFeedbacksandSuggestionSystem
         private void getData(string table)
         {
             string query = $"SELECT * FROM {table}";
-            DBFunction.DBFunction.fill(query, dataGridView1);
+            DBFunction.DBFunction.FetchUsers(query, dataGridView1);
         }
 
         private void button1_Click(object sender, EventArgs e)

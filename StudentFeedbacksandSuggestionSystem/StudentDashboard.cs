@@ -14,10 +14,12 @@ namespace StudentFeedbacksandSuggestionSystem
     public partial class StudentDashboard : Form
     {
         public event EventHandler LogoutRequested;
-        public StudentDashboard()
+        UserInfo userInfo;
+        public StudentDashboard(UserInfo userInfo)
         {
             InitializeComponent();
-            loadPage(new Home());
+            loadPage(new Home(userInfo));
+            this.userInfo = userInfo;
         }
 
         public void loadPage(Form form)
@@ -43,13 +45,13 @@ namespace StudentFeedbacksandSuggestionSystem
         private void homeButton_Click(object sender, EventArgs e)
         {
             SetButtonBorders(homeButton);
-            loadPage(new Home());
+            loadPage(new Home(userInfo));
         }
 
         private void profileButton_Click(object sender, EventArgs e)
         {
             SetButtonBorders(profileButton);
-            loadPage(new Profile());
+            loadPage(new Profile(userInfo));
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

@@ -38,6 +38,7 @@
             this.register = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.userNameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.passwordTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.genderComboBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(359, 454);
+            this.loginButton.Location = new System.Drawing.Point(359, 493);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(250, 40);
             this.loginButton.TabIndex = 15;
@@ -144,7 +145,7 @@
             this.ageTxtBox.Padding = new System.Windows.Forms.Padding(7);
             this.ageTxtBox.PasswordChar = false;
             this.ageTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ageTxtBox.PlaceholderText = "";
+            this.ageTxtBox.PlaceholderText = "Age";
             this.ageTxtBox.Size = new System.Drawing.Size(250, 31);
             this.ageTxtBox.TabIndex = 9;
             this.ageTxtBox.Texts = "";
@@ -183,7 +184,7 @@
             this.register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.register.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register.ForeColor = System.Drawing.Color.White;
-            this.register.Location = new System.Drawing.Point(358, 385);
+            this.register.Location = new System.Drawing.Point(358, 447);
             this.register.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
             this.register.Name = "register";
             this.register.Size = new System.Drawing.Size(251, 40);
@@ -237,6 +238,29 @@
             this.passwordTxtBox.Texts = "";
             this.passwordTxtBox.UnderlinedStyle = false;
             // 
+            // genderComboBox
+            // 
+            this.genderComboBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.genderComboBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.genderComboBox.BorderSize = 1;
+            this.genderComboBox.DisplayMember = "Male";
+            this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genderComboBox.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderComboBox.ForeColor = System.Drawing.Color.DimGray;
+            this.genderComboBox.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.genderComboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.genderComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.genderComboBox.ListTextColor = System.Drawing.Color.DimGray;
+            this.genderComboBox.Location = new System.Drawing.Point(359, 384);
+            this.genderComboBox.MinimumSize = new System.Drawing.Size(200, 30);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Padding = new System.Windows.Forms.Padding(1);
+            this.genderComboBox.Size = new System.Drawing.Size(250, 30);
+            this.genderComboBox.TabIndex = 16;
+            this.genderComboBox.Texts = "";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +269,7 @@
             this.BackgroundImage = global::StudentFeedbacksandSuggestionSystem.Properties.Resources.MainBackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.genderComboBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.firstNameTxtBox);
             this.Controls.Add(this.lastNameTxtBox);
@@ -275,5 +300,6 @@
         private CustomControls.CustomTextBox lastNameTxtBox;
         private CustomControls.CustomTextBox firstNameTxtBox;
         private CustomControls.CustomButton loginButton;
+        private CustomControls.CustomComboBox genderComboBox;
     }
 }

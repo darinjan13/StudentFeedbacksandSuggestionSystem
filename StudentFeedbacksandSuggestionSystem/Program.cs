@@ -17,7 +17,6 @@ namespace StudentFeedbacksandSuggestionSystem
             // Start the application using FormManager
             formManager.Start();
 
-            Application.Run();
         }
     }
 }

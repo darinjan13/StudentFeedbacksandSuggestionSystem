@@ -6,9 +6,9 @@ namespace StudentFeedbacksandSuggestionSystem
     public partial class MainForm : Form
     {
         public bool IsLoggedIn { get; set; }
-        private Login _loginForm;
+        private LoginForm _loginForm;
         private RegisterForm _registerForm;
-        public Action<String> LoginRequested;
+        public event LoginRequestedEventHandler LoginRequested;
 
         public MainForm()
         {
@@ -16,45 +16,31 @@ namespace StudentFeedbacksandSuggestionSystem
             InitializeForms();
         }
 
+        public delegate void LoginRequestedEventHandler(UserInfo userInfo);
+
         private void InitializeForms()
         {
-            _loginForm = new Login(this);
-            _registerForm = new RegisterForm();
+            _loginForm = new LoginForm(this);
+            _registerForm = new RegisterForm(this);
 
-            _loginForm.FormClosed += LoginForm_FormClosed;
-            _registerForm.FormClosed += RegisterForm_FormClosed;
+            //_loginForm.FormClosed += LoginForm_FormClosed;
+            //_registerForm.FormClosed += RegisterForm_FormClosed;
 
             LoadLogin();
         }
 
-        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        public void LoadRegister()
         {
-            LoadRegister();
-        }
-
-        private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            LoadLogin();
-        }
-
-        private void LoadRegister()
-        {
-            if (_registerForm == null || _registerForm.IsDisposed)
-            {
-                _registerForm = new RegisterForm();
-            }
+            _loginForm.Hide();
             _registerForm.TopLevel = false;
             _registerForm.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(_registerForm);
             _registerForm.Show();
         }
 
-        private void LoadLogin()
+        public void LoadLogin()
         {
-            if (_loginForm == null || _loginForm.IsDisposed)
-            {
-                _loginForm = new Login(this);
-            }
+            _registerForm.Hide();
             _loginForm.TopLevel = false;
             _loginForm.Dock = DockStyle.Fill;
             _loginForm.FormBorderStyle = FormBorderStyle.None;
@@ -62,21 +48,20 @@ namespace StudentFeedbacksandSuggestionSystem
             _loginForm.Show();
         }
 
-        public void AuthenticateUser(string role)
+        public void AuthenticateUser(UserInfo userInfo)
         {
 
-            switch(role.ToLower())
+            switch(userInfo.Role.ToLower())
             {
                 case "admin":
-                    LoginRequested?.Invoke("admin");
+                    LoginRequested?.Invoke(userInfo);
                     break;
                 case "student":
-                    LoginRequested?.Invoke("student");
+                    LoginRequested?.Invoke(userInfo);
                     break;
                 case "teacher":
                     break;
             }
-
         }
     }
 }
