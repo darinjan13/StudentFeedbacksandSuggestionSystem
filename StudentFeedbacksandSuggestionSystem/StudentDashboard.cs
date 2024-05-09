@@ -22,6 +22,11 @@ namespace StudentFeedbacksandSuggestionSystem
             this.userInfo = userInfo;
         }
 
+        public void loadingScreen()
+        {
+
+        }
+
         public void loadPage(Form form)
         {
             if (mainPanel.Controls.Count > 0)

@@ -179,11 +179,12 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
         {
             List<SuggestionsInfo> suggestionsInfo = new List<SuggestionsInfo>();
             string author, message;
+            DateTime dateTime;
 
             try
             {
                 Connection.Connection.DB();
-                query = "SELECT users.firstname, users.lastname, suggestions.message FROM users INNER JOIN suggestions ON users.user_id = suggestions.user_id";
+                query = "SELECT users.firstname, users.lastname, suggestions.message, suggestions.date_created FROM users INNER JOIN suggestions ON users.user_id = suggestions.user_id";
                 command = new OleDbCommand(query, Connection.Connection.conn);
                 reader = command.ExecuteReader();
 
@@ -193,10 +194,12 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                     {
                         author = reader["firstname"].ToString() + " " + reader["lastname"].ToString();
                         message = reader["message"].ToString();
+                        dateTime = Convert.ToDateTime(reader["date_created"]);
                         SuggestionsInfo suggestion = new SuggestionsInfo
                         {
                             Author = author,
-                            Message = message
+                            Message = message,
+                            CreatedDate = dateTime
                         };
                         suggestionsInfo.Add(suggestion);
                     }

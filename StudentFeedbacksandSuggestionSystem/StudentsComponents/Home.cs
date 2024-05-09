@@ -15,67 +15,57 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
     public partial class Home : Form
     {
         UserInfo userInfo;
-        private BindingList<SuggestionsInfo> suggestionsInfoList = new BindingList<SuggestionsInfo>();
+        private List<SuggestionsInfo> suggestionsInfos;
 
         public Home(UserInfo userInfo)
         {
             InitializeComponent();
             this.userInfo = userInfo;
             DisplaySuggestions();
+            DisplayLatest();
+        }
+
+        private void DisplayLatest()
+        {
+            suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
+            latestSuggestionsLayout.Controls.Clear();
+            foreach (var suggestions in suggestionsInfos)
+            {
+                    if (suggestions.TimeDifference.TotalMinutes < 20)
+                    {
+                        SuggestionCard suggestionCard = new SuggestionCard(suggestions);
+                        suggestionCard.TopLevel = false;
+                        latestSuggestionsLayout.Controls.Add(suggestionCard);
+                        suggestionCard.Show();
+                    }
+                    
+            }
         }
 
         private void DisplaySuggestions()
         {
-            suggestionsInfoList.Clear();
-
-            List<SuggestionsInfo> fetchedSuggestions = DBFunction.DBFunction.GetSuggestions();
-
-            foreach (var suggestionsInfo in fetchedSuggestions)
+            suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
+            suggestionsLayout.Controls.Clear();
+            foreach (var suggestions in suggestionsInfos)
             {
-                suggestionsInfoList.Add(suggestionsInfo);
-            }
-
-            foreach (var suggestionsInfo in suggestionsInfoList)
-            {
-                Suggestions suggestions = new Suggestions();
-                suggestions.Author = suggestionsInfo.Author;
-                suggestions.Message = suggestionsInfo.Message;
-                suggestions.SuggestionsClick += Suggestions_SuggestionsClick; // Subscribe to the event
-                suggestionsLayout.Controls.Add(suggestions);
+                SuggestionCard suggestionCard = new SuggestionCard(suggestions);
+                suggestionCard.TopLevel = false;
+                suggestionsLayout.Controls.Add(suggestionCard);
+                suggestionCard.Show();
             }
         }
 
         private void addSuggestion_Click(object sender, EventArgs e)
         {
-            string message = suggestionMessage.Texts;
-            DBFunction.DBFunction.AddSuggestions(userInfo.User_id, message);
-
-            SuggestionsInfo newSuggestionInfo = new SuggestionsInfo
+            if (DBFunction.DBFunction.AddSuggestions(userInfo.User_id, suggestionMessage.Texts))
             {
-                Author = userInfo.Firstname + " " + userInfo.Lastname,
-                Message = message
-            };
-
-            suggestionsInfoList.Add(newSuggestionInfo);
-
-            Suggestions newSuggestion = new Suggestions();
-            newSuggestion.Author = newSuggestionInfo.Author;
-            newSuggestion.Message = newSuggestionInfo.Message;
-            newSuggestion.SuggestionsClick += Suggestions_SuggestionsClick; // Subscribe to the event
-
-            suggestionsLayout.Controls.Add(newSuggestion);
-        }
-
-        // Step 3: Handle the event
-        private void Suggestions_SuggestionsClick(object sender, EventArgs e)
-        {
-            Suggestions clickedSuggestion = sender as Suggestions;
-
-            if (clickedSuggestion != null)
-            {
-                string message = $"Author: {clickedSuggestion.Author}\nMessage: {clickedSuggestion.Message}";
-                MessageBox.Show(message, "Suggestion Details", MessageBoxButtons.OK);
+                MessageBox.Show("Added.");
+                suggestionMessage.Texts = null;
+                DisplaySuggestions();
+                DisplayLatest();
             }
+            else
+                MessageBox.Show("Error Submiting Suggestion.");
         }
     }
 }

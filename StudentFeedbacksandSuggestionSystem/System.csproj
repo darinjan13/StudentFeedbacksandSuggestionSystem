@@ -135,6 +135,12 @@
     <Compile Include="CustomControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\SuggestionCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SuggestionCard.Designer.cs">
+      <DependentUpon>SuggestionCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\Suggestions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <EmbeddedResource Include="CustomControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\SuggestionCard.resx">
+      <DependentUpon>SuggestionCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\Suggestions.resx">
       <DependentUpon>Suggestions.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,9 +285,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\profile.png" />
-    <None Include="Resources\Profile.bmp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
