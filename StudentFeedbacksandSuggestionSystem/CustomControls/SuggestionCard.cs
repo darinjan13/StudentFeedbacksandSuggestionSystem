@@ -1,4 +1,5 @@
 ﻿using StudentFeedbacksandSuggestionSystem.Datas;
+using StudentFeedbacksandSuggestionSystem.StudentsComponents;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,27 +26,34 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         {
             authorText.Text = suggestionsInfo.Author;
             messageLabel.Text = suggestionsInfo.Message;
+            SetDatePosted();
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void SetDatePosted()
         {
             TimeSpan timeDifference = suggestionsInfo.TimeDifference;
             if (timeDifference.TotalSeconds < 60)
             {
-                MessageBox.Show($"{timeDifference.TotalSeconds:F0} seconds ago.");
+                datePosted.Text = $"{timeDifference.TotalSeconds:F0} second/s ago.";
             }
             else if (timeDifference.TotalMinutes < 1 || timeDifference.TotalHours < 1)
             {
-                MessageBox.Show($"{timeDifference.TotalMinutes:F0} minutes ago.");
+                datePosted.Text = $"{timeDifference.TotalMinutes:F0} minute/s ago.";
             }
             else if (timeDifference.TotalDays < 1)
             {
-                MessageBox.Show($"{timeDifference.TotalHours:F0} hours ago.");
+                datePosted.Text = $"{timeDifference.TotalHours:F0} hour/s ago.";
             }
             else
             {
-                MessageBox.Show($"{timeDifference.TotalDays:F0} days ago.");
+                datePosted.Text = $"{timeDifference.TotalDays:F0} day/s ago.";
             }
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            ClickedSuggestion clickedSuggestion = new ClickedSuggestion();
+            clickedSuggestion.ShowDialog();
 
         }
     }

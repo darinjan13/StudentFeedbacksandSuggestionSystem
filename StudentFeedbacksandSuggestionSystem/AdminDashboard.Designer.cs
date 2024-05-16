@@ -36,14 +36,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logoutButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
-            this.customTextBox1 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox2 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox3 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox4 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox5 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox6 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox7 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox8 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.firstnameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.lastnameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.ageTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.emailTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.passwordTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.usernameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.registerBtn = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.updateBtn = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.deleteBtn = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.IDTxt = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.genderComboBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomComboBox();
+            this.roleComboBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,9 +56,10 @@
             // 
             this.greetingslbl.AutoSize = true;
             this.greetingslbl.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greetingslbl.Location = new System.Drawing.Point(405, 33);
+            this.greetingslbl.Location = new System.Drawing.Point(540, 41);
+            this.greetingslbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.greetingslbl.Name = "greetingslbl";
-            this.greetingslbl.Size = new System.Drawing.Size(206, 25);
+            this.greetingslbl.Size = new System.Drawing.Size(265, 31);
             this.greetingslbl.TabIndex = 0;
             this.greetingslbl.Text = "WELCOME ADMIN!";
             // 
@@ -83,7 +88,8 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 25);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -94,20 +100,23 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.RowHeadersWidth = 51;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(1373, 368);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 245);
+            this.panel1.Location = new System.Drawing.Point(0, 302);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(1070, 340);
+            this.panel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.panel1.Size = new System.Drawing.Size(1427, 418);
             this.panel1.TabIndex = 3;
             // 
             // logoutButton
@@ -120,209 +129,299 @@
             this.logoutButton.FlatAppearance.BorderSize = 0;
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(900, 12);
+            this.logoutButton.Location = new System.Drawing.Point(1200, 15);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(150, 40);
+            this.logoutButton.Size = new System.Drawing.Size(200, 49);
             this.logoutButton.TabIndex = 8;
             this.logoutButton.Text = "Logout";
             this.logoutButton.TextColor = System.Drawing.Color.White;
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // customTextBox1
+            // firstnameTxtBox
             // 
-            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox1.BorderRadius = 0;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox1.Location = new System.Drawing.Point(20, 77);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "First Name";
-            this.customTextBox1.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox1.TabIndex = 9;
-            this.customTextBox1.Texts = "";
-            this.customTextBox1.UnderlinedStyle = false;
+            this.firstnameTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.firstnameTxtBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.firstnameTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.firstnameTxtBox.BorderRadius = 0;
+            this.firstnameTxtBox.BorderSize = 2;
+            this.firstnameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstnameTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.firstnameTxtBox.Location = new System.Drawing.Point(27, 95);
+            this.firstnameTxtBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.firstnameTxtBox.Multiline = false;
+            this.firstnameTxtBox.Name = "firstnameTxtBox";
+            this.firstnameTxtBox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.firstnameTxtBox.PasswordChar = false;
+            this.firstnameTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.firstnameTxtBox.PlaceholderText = "First Name";
+            this.firstnameTxtBox.Size = new System.Drawing.Size(249, 39);
+            this.firstnameTxtBox.TabIndex = 9;
+            this.firstnameTxtBox.Texts = "";
+            this.firstnameTxtBox.UnderlinedStyle = false;
             // 
-            // customTextBox2
+            // lastnameTxtBox
             // 
-            this.customTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox2.BorderRadius = 0;
-            this.customTextBox2.BorderSize = 2;
-            this.customTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox2.Location = new System.Drawing.Point(215, 77);
-            this.customTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox2.Multiline = false;
-            this.customTextBox2.Name = "customTextBox2";
-            this.customTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox2.PasswordChar = false;
-            this.customTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox2.PlaceholderText = "Last Name";
-            this.customTextBox2.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox2.TabIndex = 10;
-            this.customTextBox2.Texts = "";
-            this.customTextBox2.UnderlinedStyle = false;
+            this.lastnameTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.lastnameTxtBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.lastnameTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.lastnameTxtBox.BorderRadius = 0;
+            this.lastnameTxtBox.BorderSize = 2;
+            this.lastnameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastnameTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.lastnameTxtBox.Location = new System.Drawing.Point(287, 95);
+            this.lastnameTxtBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lastnameTxtBox.Multiline = false;
+            this.lastnameTxtBox.Name = "lastnameTxtBox";
+            this.lastnameTxtBox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.lastnameTxtBox.PasswordChar = false;
+            this.lastnameTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.lastnameTxtBox.PlaceholderText = "Last Name";
+            this.lastnameTxtBox.Size = new System.Drawing.Size(249, 39);
+            this.lastnameTxtBox.TabIndex = 10;
+            this.lastnameTxtBox.Texts = "";
+            this.lastnameTxtBox.UnderlinedStyle = false;
             // 
-            // customTextBox3
+            // ageTxtBox
             // 
-            this.customTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox3.BorderRadius = 0;
-            this.customTextBox3.BorderSize = 2;
-            this.customTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox3.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox3.Location = new System.Drawing.Point(410, 77);
-            this.customTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox3.PlaceholderText = "Age";
-            this.customTextBox3.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox3.TabIndex = 11;
-            this.customTextBox3.Texts = "";
-            this.customTextBox3.UnderlinedStyle = false;
+            this.ageTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.ageTxtBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.ageTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.ageTxtBox.BorderRadius = 0;
+            this.ageTxtBox.BorderSize = 2;
+            this.ageTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ageTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.ageTxtBox.Location = new System.Drawing.Point(547, 95);
+            this.ageTxtBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ageTxtBox.Multiline = false;
+            this.ageTxtBox.Name = "ageTxtBox";
+            this.ageTxtBox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.ageTxtBox.PasswordChar = false;
+            this.ageTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.ageTxtBox.PlaceholderText = "Age";
+            this.ageTxtBox.Size = new System.Drawing.Size(249, 39);
+            this.ageTxtBox.TabIndex = 11;
+            this.ageTxtBox.Texts = "";
+            this.ageTxtBox.UnderlinedStyle = false;
             // 
-            // customTextBox4
+            // emailTxtBox
             // 
-            this.customTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox4.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox4.BorderRadius = 0;
-            this.customTextBox4.BorderSize = 2;
-            this.customTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox4.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox4.Location = new System.Drawing.Point(605, 77);
-            this.customTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox4.Multiline = false;
-            this.customTextBox4.Name = "customTextBox4";
-            this.customTextBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox4.PasswordChar = false;
-            this.customTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox4.PlaceholderText = "Email";
-            this.customTextBox4.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox4.TabIndex = 12;
-            this.customTextBox4.Texts = "";
-            this.customTextBox4.UnderlinedStyle = false;
+            this.emailTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.emailTxtBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.emailTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.emailTxtBox.BorderRadius = 0;
+            this.emailTxtBox.BorderSize = 2;
+            this.emailTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.emailTxtBox.Location = new System.Drawing.Point(807, 95);
+            this.emailTxtBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.emailTxtBox.Multiline = false;
+            this.emailTxtBox.Name = "emailTxtBox";
+            this.emailTxtBox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.emailTxtBox.PasswordChar = false;
+            this.emailTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.emailTxtBox.PlaceholderText = "Email";
+            this.emailTxtBox.Size = new System.Drawing.Size(249, 39);
+            this.emailTxtBox.TabIndex = 12;
+            this.emailTxtBox.Texts = "";
+            this.emailTxtBox.UnderlinedStyle = false;
             // 
-            // customTextBox5
+            // passwordTxtBox
             // 
-            this.customTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox5.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox5.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox5.BorderRadius = 0;
-            this.customTextBox5.BorderSize = 2;
-            this.customTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox5.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox5.Location = new System.Drawing.Point(605, 116);
-            this.customTextBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox5.Multiline = false;
-            this.customTextBox5.Name = "customTextBox5";
-            this.customTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox5.PasswordChar = false;
-            this.customTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox5.PlaceholderText = "Role";
-            this.customTextBox5.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox5.TabIndex = 16;
-            this.customTextBox5.Texts = "";
-            this.customTextBox5.UnderlinedStyle = false;
+            this.passwordTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.passwordTxtBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.passwordTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.passwordTxtBox.BorderRadius = 0;
+            this.passwordTxtBox.BorderSize = 2;
+            this.passwordTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.passwordTxtBox.Location = new System.Drawing.Point(287, 143);
+            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.passwordTxtBox.Multiline = false;
+            this.passwordTxtBox.Name = "passwordTxtBox";
+            this.passwordTxtBox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.passwordTxtBox.PasswordChar = false;
+            this.passwordTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.passwordTxtBox.PlaceholderText = "Password";
+            this.passwordTxtBox.Size = new System.Drawing.Size(249, 39);
+            this.passwordTxtBox.TabIndex = 14;
+            this.passwordTxtBox.Texts = "";
+            this.passwordTxtBox.UnderlinedStyle = false;
             // 
-            // customTextBox6
+            // usernameTxtBox
             // 
-            this.customTextBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox6.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox6.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox6.BorderRadius = 0;
-            this.customTextBox6.BorderSize = 2;
-            this.customTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox6.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox6.Location = new System.Drawing.Point(410, 116);
-            this.customTextBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox6.Multiline = false;
-            this.customTextBox6.Name = "customTextBox6";
-            this.customTextBox6.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox6.PasswordChar = false;
-            this.customTextBox6.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox6.PlaceholderText = "Gender";
-            this.customTextBox6.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox6.TabIndex = 15;
-            this.customTextBox6.Texts = "";
-            this.customTextBox6.UnderlinedStyle = false;
+            this.usernameTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.usernameTxtBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.usernameTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.usernameTxtBox.BorderRadius = 0;
+            this.usernameTxtBox.BorderSize = 2;
+            this.usernameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.usernameTxtBox.Location = new System.Drawing.Point(27, 143);
+            this.usernameTxtBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.usernameTxtBox.Multiline = false;
+            this.usernameTxtBox.Name = "usernameTxtBox";
+            this.usernameTxtBox.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
+            this.usernameTxtBox.PasswordChar = false;
+            this.usernameTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.usernameTxtBox.PlaceholderText = "Username";
+            this.usernameTxtBox.Size = new System.Drawing.Size(249, 39);
+            this.usernameTxtBox.TabIndex = 13;
+            this.usernameTxtBox.Texts = "";
+            this.usernameTxtBox.UnderlinedStyle = false;
             // 
-            // customTextBox7
+            // registerBtn
             // 
-            this.customTextBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox7.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox7.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox7.BorderRadius = 0;
-            this.customTextBox7.BorderSize = 2;
-            this.customTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox7.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox7.Location = new System.Drawing.Point(215, 116);
-            this.customTextBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox7.Multiline = false;
-            this.customTextBox7.Name = "customTextBox7";
-            this.customTextBox7.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox7.PasswordChar = false;
-            this.customTextBox7.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox7.PlaceholderText = "Password";
-            this.customTextBox7.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox7.TabIndex = 14;
-            this.customTextBox7.Texts = "";
-            this.customTextBox7.UnderlinedStyle = false;
+            this.registerBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.registerBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.registerBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.registerBtn.BorderRadius = 0;
+            this.registerBtn.BorderSize = 0;
+            this.registerBtn.FlatAppearance.BorderSize = 0;
+            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerBtn.ForeColor = System.Drawing.Color.White;
+            this.registerBtn.Location = new System.Drawing.Point(271, 255);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(175, 40);
+            this.registerBtn.TabIndex = 17;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.TextColor = System.Drawing.Color.White;
+            this.registerBtn.UseVisualStyleBackColor = false;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
-            // customTextBox8
+            // updateBtn
             // 
-            this.customTextBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox8.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox8.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox8.BorderRadius = 0;
-            this.customTextBox8.BorderSize = 2;
-            this.customTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox8.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox8.Location = new System.Drawing.Point(20, 116);
-            this.customTextBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox8.Multiline = false;
-            this.customTextBox8.Name = "customTextBox8";
-            this.customTextBox8.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox8.PasswordChar = false;
-            this.customTextBox8.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox8.PlaceholderText = "Username";
-            this.customTextBox8.Size = new System.Drawing.Size(187, 31);
-            this.customTextBox8.TabIndex = 13;
-            this.customTextBox8.Texts = "";
-            this.customTextBox8.UnderlinedStyle = false;
+            this.updateBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.updateBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.updateBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.updateBtn.BorderRadius = 0;
+            this.updateBtn.BorderSize = 0;
+            this.updateBtn.FlatAppearance.BorderSize = 0;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.ForeColor = System.Drawing.Color.White;
+            this.updateBtn.Location = new System.Drawing.Point(452, 255);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(175, 40);
+            this.updateBtn.TabIndex = 18;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.TextColor = System.Drawing.Color.White;
+            this.updateBtn.UseVisualStyleBackColor = false;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.deleteBtn.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.deleteBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.deleteBtn.BorderRadius = 0;
+            this.deleteBtn.BorderSize = 0;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(630, 255);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(175, 40);
+            this.deleteBtn.TabIndex = 19;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.TextColor = System.Drawing.Color.White;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // IDTxt
+            // 
+            this.IDTxt.BackColor = System.Drawing.SystemColors.Window;
+            this.IDTxt.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.IDTxt.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.IDTxt.BorderRadius = 0;
+            this.IDTxt.BorderSize = 2;
+            this.IDTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDTxt.ForeColor = System.Drawing.Color.Black;
+            this.IDTxt.Location = new System.Drawing.Point(27, 191);
+            this.IDTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.IDTxt.Multiline = false;
+            this.IDTxt.Name = "IDTxt";
+            this.IDTxt.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.IDTxt.PasswordChar = false;
+            this.IDTxt.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.IDTxt.PlaceholderText = "ID";
+            this.IDTxt.Size = new System.Drawing.Size(250, 35);
+            this.IDTxt.TabIndex = 100;
+            this.IDTxt.Texts = "";
+            this.IDTxt.UnderlinedStyle = false;
+            this.IDTxt.Visible = false;
+            // 
+            // genderComboBox
+            // 
+            this.genderComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Male",
+            "Female"});
+            this.genderComboBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.genderComboBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.genderComboBox.BorderSize = 1;
+            this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.genderComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.genderComboBox.ForeColor = System.Drawing.Color.DimGray;
+            this.genderComboBox.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.genderComboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.genderComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.genderComboBox.ListTextColor = System.Drawing.Color.DimGray;
+            this.genderComboBox.Location = new System.Drawing.Point(547, 143);
+            this.genderComboBox.MinimumSize = new System.Drawing.Size(200, 30);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Padding = new System.Windows.Forms.Padding(1);
+            this.genderComboBox.Size = new System.Drawing.Size(249, 39);
+            this.genderComboBox.TabIndex = 15;
+            this.genderComboBox.Texts = "Male";
+            // 
+            // roleComboBox
+            // 
+            this.roleComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Student",
+            "Admin"});
+            this.roleComboBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.roleComboBox.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.roleComboBox.BorderSize = 1;
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.roleComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.roleComboBox.ForeColor = System.Drawing.Color.DimGray;
+            this.roleComboBox.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.roleComboBox.Items.AddRange(new object[] {
+            "Student",
+            "Admin"});
+            this.roleComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.roleComboBox.ListTextColor = System.Drawing.Color.DimGray;
+            this.roleComboBox.Location = new System.Drawing.Point(807, 143);
+            this.roleComboBox.MinimumSize = new System.Drawing.Size(200, 30);
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Padding = new System.Windows.Forms.Padding(1);
+            this.roleComboBox.Size = new System.Drawing.Size(249, 39);
+            this.roleComboBox.TabIndex = 16;
+            this.roleComboBox.Texts = "Student";
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 585);
-            this.Controls.Add(this.customTextBox5);
-            this.Controls.Add(this.customTextBox6);
-            this.Controls.Add(this.customTextBox7);
-            this.Controls.Add(this.customTextBox8);
-            this.Controls.Add(this.customTextBox4);
-            this.Controls.Add(this.customTextBox3);
-            this.Controls.Add(this.customTextBox2);
-            this.Controls.Add(this.customTextBox1);
+            this.ClientSize = new System.Drawing.Size(1427, 720);
+            this.Controls.Add(this.roleComboBox);
+            this.Controls.Add(this.genderComboBox);
+            this.Controls.Add(this.IDTxt);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.updateBtn);
+            this.Controls.Add(this.registerBtn);
+            this.Controls.Add(this.passwordTxtBox);
+            this.Controls.Add(this.usernameTxtBox);
+            this.Controls.Add(this.emailTxtBox);
+            this.Controls.Add(this.ageTxtBox);
+            this.Controls.Add(this.lastnameTxtBox);
+            this.Controls.Add(this.firstnameTxtBox);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.greetingslbl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminDashboard";
-            this.Text = "Stock";
+            this.Text = "Admin Dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -336,13 +435,17 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private CustomControls.CustomButton logoutButton;
-        private CustomControls.CustomTextBox customTextBox1;
-        private CustomControls.CustomTextBox customTextBox2;
-        private CustomControls.CustomTextBox customTextBox3;
-        private CustomControls.CustomTextBox customTextBox4;
-        private CustomControls.CustomTextBox customTextBox5;
-        private CustomControls.CustomTextBox customTextBox6;
-        private CustomControls.CustomTextBox customTextBox7;
-        private CustomControls.CustomTextBox customTextBox8;
+        private CustomControls.CustomTextBox firstnameTxtBox;
+        private CustomControls.CustomTextBox lastnameTxtBox;
+        private CustomControls.CustomTextBox ageTxtBox;
+        private CustomControls.CustomTextBox emailTxtBox;
+        private CustomControls.CustomTextBox passwordTxtBox;
+        private CustomControls.CustomTextBox usernameTxtBox;
+        private CustomControls.CustomButton registerBtn;
+        private CustomControls.CustomButton updateBtn;
+        private CustomControls.CustomButton deleteBtn;
+        private CustomControls.CustomTextBox IDTxt;
+        private CustomControls.CustomComboBox genderComboBox;
+        private CustomControls.CustomComboBox roleComboBox;
     }
 }
