@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.loginButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.firstNameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.lastNameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.ageTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
@@ -39,6 +38,8 @@
             this.userNameTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.passwordTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.genderComboBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,25 +66,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(300, 0, 300, 0);
             this.panel1.Size = new System.Drawing.Size(1000, 100);
             this.panel1.TabIndex = 14;
-            // 
-            // loginButton
-            // 
-            this.loginButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.loginButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.loginButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.loginButton.BorderRadius = 0;
-            this.loginButton.BorderSize = 0;
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(359, 493);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(250, 40);
-            this.loginButton.TabIndex = 15;
-            this.loginButton.Text = "Login";
-            this.loginButton.TextColor = System.Drawing.Color.White;
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // firstNameTxtBox
             // 
@@ -184,7 +166,7 @@
             this.register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.register.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register.ForeColor = System.Drawing.Color.White;
-            this.register.Location = new System.Drawing.Point(358, 447);
+            this.register.Location = new System.Drawing.Point(359, 421);
             this.register.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
             this.register.Name = "register";
             this.register.Size = new System.Drawing.Size(251, 40);
@@ -261,6 +243,30 @@
             this.genderComboBox.TabIndex = 16;
             this.genderComboBox.Texts = "";
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(356, 481);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 20);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Already have an account? ";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(536, 481);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Login";
+            this.label2.Click += new System.EventHandler(this.loginButton_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,8 +275,9 @@
             this.BackgroundImage = global::StudentFeedbacksandSuggestionSystem.Properties.Resources.MainBackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.genderComboBox);
-            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.firstNameTxtBox);
             this.Controls.Add(this.lastNameTxtBox);
             this.Controls.Add(this.ageTxtBox);
@@ -299,7 +306,8 @@
         private CustomControls.CustomTextBox ageTxtBox;
         private CustomControls.CustomTextBox lastNameTxtBox;
         private CustomControls.CustomTextBox firstNameTxtBox;
-        private CustomControls.CustomButton loginButton;
         private CustomControls.CustomComboBox genderComboBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
     }
 }

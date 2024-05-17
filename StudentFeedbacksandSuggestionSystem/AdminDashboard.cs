@@ -39,5 +39,10 @@ namespace StudentFeedbacksandSuggestionSystem
         {
             LogoutRequested?.Invoke(this, EventArgs.Empty);
         }
+
+        private void customTextBox5_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

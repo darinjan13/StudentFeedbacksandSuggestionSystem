@@ -208,13 +208,45 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 {
                     MessageBox.Show("Error!");
                 }
+                Connection.Connection.conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Connection.Connection.conn.Close();
             }
 
             return suggestionsInfo;
+        }
+
+        public static bool EditProfile(string firstname, string lastname, string username, string email, int userid)
+        {
+            bool result = false;
+            try
+            {
+                Connection.Connection.DB();
+                query = "UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ? where user_id = ?";
+                command = new OleDbCommand(query, Connection.Connection.conn);
+                command.Parameters.AddWithValue("firstname", firstname);
+                command.Parameters.AddWithValue("lastname", lastname);
+                command.Parameters.AddWithValue("username", username);
+                command.Parameters.AddWithValue("email", email);
+                command.Parameters.AddWithValue("userid", userid);
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Edit Successful");
+                    result = true;
+                }
+                else
+                    result = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Connection.Connection.conn.Close();
+            }
+
+            return result;
         }
 
     }
