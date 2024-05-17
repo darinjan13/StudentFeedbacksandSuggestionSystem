@@ -20,7 +20,7 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
         public static OleDbCommand command;
         public static OleDbDataReader reader;
 
-        public static void FetchUsers(string q, DataGridView dgv)
+        public static void GetData(string q, DataGridView dgv)
         {
             try 
             {
@@ -46,14 +46,11 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             bool success = false;
             try
             {
-                // Define the SQL query
                 query = "INSERT INTO users ( firstname, lastname, age, email, gender, username, [password], role ) VALUES (@firstname, @lastname, @age, @email, @gender, @username, @password, @role)";
 
                 Connection.Connection.DB();
-                // Create a command object
                 command = new OleDbCommand(query, Connection.Connection.conn);
 
-                // Add parameters
                 command.Parameters.AddWithValue("@firstname", firstname);
                 command.Parameters.AddWithValue("@lastname", lastname);
                 command.Parameters.AddWithValue("@age", age);
@@ -63,10 +60,8 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 command.Parameters.AddWithValue("@password", password);
                 command.Parameters.AddWithValue("@role", role);
 
-                // Execute the query
                 int rowsAffected = command.ExecuteNonQuery();
 
-                // Close the connection
                 Connection.Connection.conn.Close();
 
                 if (rowsAffected > 0)

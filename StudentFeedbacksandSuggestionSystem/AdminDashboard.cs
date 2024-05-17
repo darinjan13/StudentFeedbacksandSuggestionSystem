@@ -24,10 +24,10 @@ namespace StudentFeedbacksandSuggestionSystem
         private void getData(string table)
         {
             string query = $"SELECT * FROM {table}";
-            DBFunction.DBFunction.FetchUsers(query, dataGridView1);
+            DBFunction.DBFunction.GetData(query, dataGridView1);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logoutButton_Click(object sender, EventArgs e)
         {
             string username = "s";
             string password = "s";
@@ -35,9 +35,17 @@ namespace StudentFeedbacksandSuggestionSystem
             //DBFunction.DBFunction.InsertIntoUsers(username, password, role);
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
+        private void registerBtn_Click(object sender, EventArgs e)
         {
-            LogoutRequested?.Invoke(this, EventArgs.Empty);
+            string firstname = firstnameTxtBox.Texts;
+            string lastname = lastnameTxtBox.Texts;
+            int age = Convert.ToInt32(ageTxtBox.Texts);
+            string email = emailTxtBox.Texts;
+            string username = usernameTxtBox.Texts;
+            string password = passwordTxtBox.Texts;
+            string gender = genderComboBox.Texts.ToLower();
+            string role = roleComboBox.Texts.ToLower();
+            DBFunction.DBFunction.Register(firstname, lastname, age, email, username, password, gender, role);
         }
 
         private void customTextBox5_Load(object sender, EventArgs e)

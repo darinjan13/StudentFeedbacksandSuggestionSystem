@@ -186,6 +186,17 @@
     <Compile Include="StudentDashboard.Designer.cs">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentFeedbackAndSuggestionsDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentFeedbackAndSuggestionsDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsComponents\ClickedSuggestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentsComponents\ClickedSuggestion.Designer.cs">
+      <DependentUpon>ClickedSuggestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentsComponents\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +256,9 @@
     <EmbeddedResource Include="StudentDashboard.resx">
       <DependentUpon>StudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentsComponents\ClickedSuggestion.resx">
+      <DependentUpon>ClickedSuggestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentsComponents\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +278,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StudentFeedbackAndSuggestionsDBDataSet.xsc">
+      <DependentUpon>StudentFeedbackAndSuggestionsDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentFeedbackAndSuggestionsDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentFeedbackAndSuggestionsDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentFeedbackAndSuggestionsDBDataSet.xss">
+      <DependentUpon>StudentFeedbackAndSuggestionsDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -285,6 +310,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\profile.png" />
+    <EmbeddedResource Include="StudentFeedbackAndSuggestionsDB.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
