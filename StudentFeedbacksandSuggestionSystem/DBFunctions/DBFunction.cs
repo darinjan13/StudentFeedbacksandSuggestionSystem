@@ -41,6 +41,67 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             }
         }
 
+        public static bool Delete(int ID)
+        {
+            bool success = false;
+            try
+            {
+                query = "DELETE FROM users WHERE user_id = @ID";
+
+                Connection.Connection.DB();
+                command = new OleDbCommand(query, Connection.Connection.conn);
+
+                command.Parameters.AddWithValue("@ID", ID);
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                Connection.Connection.conn.Close();
+
+                success = rowsAffected > 0;
+            }
+            catch(Exception ex)
+            {
+                Connection.Connection.conn.Close();
+
+            }
+
+            return success;
+        }
+
+        public static bool Update(int ID, string firstname, string lastname, int age, string email, string gender, string username, string password, string role)
+        {
+            bool success = false;
+            try
+            {
+                query = "UPDATE users SET firstname = @firstname, lastname = @lastname, age = @age, email = @email, gender = @gender, username = @username, [password] = @password, role = @role WHERE user_id = @user_id";
+
+                Connection.Connection.DB();
+                command = new OleDbCommand(query, Connection.Connection.conn);
+
+                command.Parameters.AddWithValue("@firstname", firstname);
+                command.Parameters.AddWithValue("@lastname", lastname);
+                command.Parameters.AddWithValue("@age", age);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@gender", gender);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@role", role);
+                command.Parameters.AddWithValue("@user_id", ID);
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                Connection.Connection.conn.Close();
+
+                    success = rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter required details.");
+                Connection.Connection.conn.Close();
+            }
+            return success;
+        }
+
         public static bool Register(string firstname, string lastname, int age, string email, string gender, string username, string password, string role)
         {
             bool success = false;
@@ -64,16 +125,7 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
 
                 Connection.Connection.conn.Close();
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Registered Successfully.");
-                    success = true;
-                }
-                else
-                {
-                    MessageBox.Show("Somethings Wrong.");
-                    success = false;
-                }
+                success = rowsAffected > 0;
             }
             catch (Exception)
             {
@@ -149,15 +201,16 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             }
         }
 
-        public static bool AddSuggestions(int user_id, string message)
+        public static bool AddSuggestions(int user_id, string title, string message)
         {
             bool result = false;
             try
             {
                 Connection.Connection.DB();
-                query = "INSERT INTO suggestions (user_id, message, date_created) VALUES (@user_id, @message, @date_created)";
+                query = "INSERT INTO suggestions (user_id, title, message, date_created) VALUES (@user_id, @title, @message, @date_created)";
                 command = new OleDbCommand(query, Connection.Connection.conn);
                 command.Parameters.AddWithValue("@user_id", user_id);
+                command.Parameters.AddWithValue("@title", title);
                 command.Parameters.AddWithValue("@message", message);
                 command.Parameters.AddWithValue("@date_created", DateTime.Now.ToString());
                 command.ExecuteNonQuery();
@@ -165,7 +218,7 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 result = true;
             } catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("asdas" + ex.Message);
             }
             return result;
         }
@@ -173,13 +226,13 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
         public static List<SuggestionsInfo> GetSuggestions()
         {
             List<SuggestionsInfo> suggestionsInfo = new List<SuggestionsInfo>();
-            string author, message;
+            string author, title, message;
             DateTime dateTime;
 
             try
             {
                 Connection.Connection.DB();
-                query = "SELECT users.firstname, users.lastname, suggestions.message, suggestions.date_created FROM users INNER JOIN suggestions ON users.user_id = suggestions.user_id";
+                query = "SELECT users.firstname, users.lastname, suggestions.title, suggestions.message, suggestions.date_created FROM users INNER JOIN suggestions ON users.user_id = suggestions.user_id";
                 command = new OleDbCommand(query, Connection.Connection.conn);
                 reader = command.ExecuteReader();
 
@@ -187,11 +240,13 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 {
                     while (reader.Read())
                     {
+                        title = reader["title"].ToString();
                         author = reader["firstname"].ToString() + " " + reader["lastname"].ToString();
                         message = reader["message"].ToString();
                         dateTime = Convert.ToDateTime(reader["date_created"]);
                         SuggestionsInfo suggestion = new SuggestionsInfo
                         {
+                            Title = title,
                             Author = author,
                             Message = message,
                             CreatedDate = dateTime

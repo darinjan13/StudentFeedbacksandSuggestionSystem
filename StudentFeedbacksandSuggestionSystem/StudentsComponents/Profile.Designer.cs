@@ -30,24 +30,26 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.saveEdit = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
-            this.email = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.username = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.editProfile = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
-            this.lastname = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.firstname = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.fullnameLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.customButton1 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.customButton2 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StudentFeedbacksandSuggestionSystem.Properties.Resources.Profile;
-            this.pictureBox1.Location = new System.Drawing.Point(327, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(60, 101);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 137);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -57,17 +59,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.saveEdit);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.email);
-            this.panel1.Controls.Add(this.username);
-            this.panel1.Controls.Add(this.editProfile);
-            this.panel1.Controls.Add(this.lastname);
-            this.panel1.Controls.Add(this.firstname);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -75,177 +68,102 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 2;
             // 
-            // saveEdit
+            // fullnameLabel
             // 
-            this.saveEdit.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.saveEdit.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.saveEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.saveEdit.BorderRadius = 0;
-            this.saveEdit.BorderSize = 0;
-            this.saveEdit.FlatAppearance.BorderSize = 0;
-            this.saveEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveEdit.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveEdit.ForeColor = System.Drawing.Color.White;
-            this.saveEdit.Location = new System.Drawing.Point(437, 334);
-            this.saveEdit.Name = "saveEdit";
-            this.saveEdit.Size = new System.Drawing.Size(90, 40);
-            this.saveEdit.TabIndex = 8;
-            this.saveEdit.Text = "Save";
-            this.saveEdit.TextColor = System.Drawing.Color.White;
-            this.saveEdit.UseVisualStyleBackColor = false;
-            this.saveEdit.Click += new System.EventHandler(this.saveEdit_Click);
+            this.fullnameLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullnameLabel.Location = new System.Drawing.Point(57, 245);
+            this.fullnameLabel.Name = "fullnameLabel";
+            this.fullnameLabel.Size = new System.Drawing.Size(203, 31);
+            this.fullnameLabel.TabIndex = 9;
+            this.fullnameLabel.Text = "Full Name";
+            this.fullnameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // email
+            // panel2
             // 
-            this.email.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.email.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.email.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.email.BorderRadius = 0;
-            this.email.BorderSize = 2;
-            this.email.Enabled = false;
-            this.email.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.ForeColor = System.Drawing.Color.Black;
-            this.email.Location = new System.Drawing.Point(327, 296);
-            this.email.Margin = new System.Windows.Forms.Padding(4);
-            this.email.Multiline = false;
-            this.email.Name = "email";
-            this.email.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.email.PasswordChar = false;
-            this.email.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.email.PlaceholderText = "";
-            this.email.Size = new System.Drawing.Size(200, 31);
-            this.email.TabIndex = 7;
-            this.email.Texts = "";
-            this.email.UnderlinedStyle = false;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.fullnameLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(327, 450);
+            this.panel2.TabIndex = 13;
             // 
-            // username
+            // panel3
             // 
-            this.username.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.username.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.username.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.username.BorderRadius = 0;
-            this.username.BorderSize = 2;
-            this.username.Enabled = false;
-            this.username.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.ForeColor = System.Drawing.Color.Black;
-            this.username.Location = new System.Drawing.Point(327, 257);
-            this.username.Margin = new System.Windows.Forms.Padding(4);
-            this.username.Multiline = false;
-            this.username.Name = "username";
-            this.username.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.username.PasswordChar = false;
-            this.username.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.username.PlaceholderText = "";
-            this.username.Size = new System.Drawing.Size(200, 31);
-            this.username.TabIndex = 6;
-            this.username.Texts = "";
-            this.username.UnderlinedStyle = false;
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(356, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(20);
+            this.panel3.Size = new System.Drawing.Size(444, 450);
+            this.panel3.TabIndex = 14;
             // 
-            // editProfile
+            // panel4
             // 
-            this.editProfile.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.editProfile.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.editProfile.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.editProfile.BorderRadius = 0;
-            this.editProfile.BorderSize = 0;
-            this.editProfile.FlatAppearance.BorderSize = 0;
-            this.editProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editProfile.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editProfile.ForeColor = System.Drawing.Color.White;
-            this.editProfile.Location = new System.Drawing.Point(327, 334);
-            this.editProfile.Name = "editProfile";
-            this.editProfile.Size = new System.Drawing.Size(90, 40);
-            this.editProfile.TabIndex = 5;
-            this.editProfile.Text = "Edit Profile";
-            this.editProfile.TextColor = System.Drawing.Color.White;
-            this.editProfile.UseVisualStyleBackColor = false;
-            this.editProfile.Click += new System.EventHandler(this.editProfile_Click);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(20, 20);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(404, 43);
+            this.panel4.TabIndex = 0;
             // 
-            // lastname
+            // panel5
             // 
-            this.lastname.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lastname.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.lastname.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.lastname.BorderRadius = 0;
-            this.lastname.BorderSize = 2;
-            this.lastname.Enabled = false;
-            this.lastname.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastname.ForeColor = System.Drawing.Color.Black;
-            this.lastname.Location = new System.Drawing.Point(327, 218);
-            this.lastname.Margin = new System.Windows.Forms.Padding(4);
-            this.lastname.Multiline = false;
-            this.lastname.Name = "lastname";
-            this.lastname.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.lastname.PasswordChar = false;
-            this.lastname.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.lastname.PlaceholderText = "";
-            this.lastname.Size = new System.Drawing.Size(200, 31);
-            this.lastname.TabIndex = 4;
-            this.lastname.Texts = "";
-            this.lastname.UnderlinedStyle = false;
+            this.panel5.Controls.Add(this.customButton2);
+            this.panel5.Controls.Add(this.customButton1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(20, 69);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(404, 361);
+            this.panel5.TabIndex = 1;
             // 
-            // firstname
+            // label5
             // 
-            this.firstname.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.firstname.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.firstname.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.firstname.BorderRadius = 0;
-            this.firstname.BorderSize = 2;
-            this.firstname.Enabled = false;
-            this.firstname.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstname.ForeColor = System.Drawing.Color.Black;
-            this.firstname.Location = new System.Drawing.Point(327, 179);
-            this.firstname.Margin = new System.Windows.Forms.Padding(4);
-            this.firstname.Multiline = false;
-            this.firstname.Name = "firstname";
-            this.firstname.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.firstname.PasswordChar = false;
-            this.firstname.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.firstname.PlaceholderText = "";
-            this.firstname.Size = new System.Drawing.Size(200, 31);
-            this.firstname.TabIndex = 3;
-            this.firstname.Texts = "";
-            this.firstname.UnderlinedStyle = false;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(404, 43);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Your Suggestions";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // customButton1
             // 
-            this.label1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(251, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 31);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "First name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton1.BorderRadius = 0;
+            this.customButton1.BorderSize = 0;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.Black;
+            this.customButton1.Location = new System.Drawing.Point(74, 57);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(150, 40);
+            this.customButton1.TabIndex = 0;
+            this.customButton1.Text = "customButton1";
+            this.customButton1.TextColor = System.Drawing.Color.Black;
+            this.customButton1.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // customButton2
             // 
-            this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(251, 257);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 31);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Username";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(251, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 31);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Last name";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(251, 296);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 31);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Email";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.customButton2.BackColor = System.Drawing.Color.Transparent;
+            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customButton2.BorderRadius = 0;
+            this.customButton2.BorderSize = 0;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
+            this.customButton2.Location = new System.Drawing.Point(74, 118);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(150, 40);
+            this.customButton2.TabIndex = 1;
+            this.customButton2.Text = "customButton2";
+            this.customButton2.TextColor = System.Drawing.Color.Black;
+            this.customButton2.UseVisualStyleBackColor = false;
             // 
             // Profile
             // 
@@ -258,6 +176,10 @@
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -266,15 +188,13 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private CustomControls.CustomTextBox email;
-        private CustomControls.CustomTextBox username;
-        private CustomControls.CustomButton editProfile;
-        private CustomControls.CustomTextBox lastname;
-        private CustomControls.CustomTextBox firstname;
-        private CustomControls.CustomButton saveEdit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label fullnameLabel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private CustomControls.CustomButton customButton2;
+        private CustomControls.CustomButton customButton1;
     }
 }

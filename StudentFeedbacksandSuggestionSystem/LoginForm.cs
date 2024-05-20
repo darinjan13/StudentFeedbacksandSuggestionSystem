@@ -14,7 +14,6 @@ namespace StudentFeedbacksandSuggestionSystem
     public partial class LoginForm : Form
     {
         private MainForm mainForm;
-        public static string sendtext = "";
         UserInfo userInfo;
         public LoginForm(MainForm mainForm)
         {

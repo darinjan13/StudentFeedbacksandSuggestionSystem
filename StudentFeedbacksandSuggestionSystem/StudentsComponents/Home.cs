@@ -22,31 +22,32 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
             InitializeComponent();
             this.userInfo = userInfo;
             DisplaySuggestions();
-            DisplayLatest();
+            //DisplayLatest();
         }
 
-        private void DisplayLatest()
+        private void DisplayMostVotes()
         {
             suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
+
+            var sortedSuggestions = suggestionsInfos.OrderByDescending(s => s.UpVotes - s.DownVotes).ToList();
+
             latestSuggestionsLayout.Controls.Clear();
-            foreach (var suggestions in suggestionsInfos)
+
+            if (sortedSuggestions.Any())
             {
-                    if (suggestions.TimeDifference.TotalMinutes < 20)
-                    {
-                        SuggestionCard suggestionCard = new SuggestionCard(suggestions);
-                        suggestionCard.TopLevel = false;
-                        latestSuggestionsLayout.Controls.Add(suggestionCard);
-                        suggestionCard.Show();
-                    }
-                    
+                SuggestionCard suggestionCard = new SuggestionCard(sortedSuggestions[0]);
+                suggestionCard.TopLevel = false;
+                latestSuggestionsLayout.Controls.Add(suggestionCard);
+                suggestionCard.Show();
             }
         }
 
         private void DisplaySuggestions()
         {
             suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
+            var sortedSuggestions = suggestionsInfos.OrderBy(s => s.TimeDifference.TotalSeconds).ToList();
             suggestionsLayout.Controls.Clear();
-            foreach (var suggestions in suggestionsInfos)
+            foreach (var suggestions in sortedSuggestions)
             {
                 SuggestionCard suggestionCard = new SuggestionCard(suggestions);
                 suggestionCard.TopLevel = false;
@@ -57,12 +58,12 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
         private void addSuggestion_Click(object sender, EventArgs e)
         {
-            if (DBFunction.DBFunction.AddSuggestions(userInfo.User_id, suggestionMessage.Texts))
+            if (DBFunction.DBFunction.AddSuggestions(userInfo.User_id, titleTxtBox.Texts, suggestionMessage.Texts))
             {
                 MessageBox.Show("Added.");
                 suggestionMessage.Texts = null;
                 DisplaySuggestions();
-                DisplayLatest();
+                DisplayMostVotes();
             }
             else
                 MessageBox.Show("Error Submiting Suggestion.");

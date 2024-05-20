@@ -13,13 +13,14 @@ namespace StudentFeedbacksandSuggestionSystem
 {
     public partial class StudentDashboard : Form
     {
-        public event EventHandler LogoutRequested;
         UserInfo userInfo;
-        public StudentDashboard(UserInfo userInfo)
+        FormManager formManager;
+        public StudentDashboard(UserInfo userInfo, FormManager formManager)
         {
             InitializeComponent();
             loadPage(new Home(userInfo));
             this.userInfo = userInfo;
+            this.formManager = formManager;
         }
 
         public void loadingScreen()
@@ -67,7 +68,12 @@ namespace StudentFeedbacksandSuggestionSystem
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            LogoutRequested?.Invoke(this, EventArgs.Empty);
+            formManager.Logout();
+        }
+
+        private void StudentDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

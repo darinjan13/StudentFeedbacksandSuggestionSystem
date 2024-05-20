@@ -8,7 +8,7 @@ namespace StudentFeedbacksandSuggestionSystem
         public bool IsLoggedIn { get; set; }
         private LoginForm _loginForm;
         private RegisterForm _registerForm;
-        public event LoginRequestedEventHandler LoginRequested;
+        private FormManager _formManager;
 
         public MainForm()
         {
@@ -16,16 +16,13 @@ namespace StudentFeedbacksandSuggestionSystem
             InitializeForms();
         }
 
-        public delegate void LoginRequestedEventHandler(UserInfo userInfo);
+        public delegate void LoginRequestedEventHandler(UserInfo userInfo, FormManager formManager);
 
         private void InitializeForms()
         {
             _loginForm = new LoginForm(this);
             _registerForm = new RegisterForm(this);
-
-            //_loginForm.FormClosed += LoginForm_FormClosed;
-            //_registerForm.FormClosed += RegisterForm_FormClosed;
-
+            _formManager = new FormManager(this);
             LoadLogin();
         }
 
@@ -54,10 +51,10 @@ namespace StudentFeedbacksandSuggestionSystem
             switch(userInfo.Role.ToLower())
             {
                 case "admin":
-                    LoginRequested?.Invoke(userInfo);
+                    _formManager.Login(userInfo);
                     break;
                 case "student":
-                    LoginRequested?.Invoke(userInfo);
+                    _formManager.Login(userInfo);
                     break;
                 case "teacher":
                     break;

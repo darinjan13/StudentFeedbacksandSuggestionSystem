@@ -278,6 +278,11 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                 if (isPasswordChar)
                     textBox1.UseSystemPasswordChar = false;
             }
+            else
+            {
+                isPlaceholder = false;
+                textBox1.ForeColor = Color.Black;
+            }
         }
         private void RemovePlaceholder()
         {

@@ -24,7 +24,8 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         
         private void SetLabelValue()
         {
-            authorText.Text = suggestionsInfo.Author;
+            titleLabel.Text = suggestionsInfo.Title;
+            authorLabel.Text = "By: " + suggestionsInfo.Author;
             messageLabel.Text = suggestionsInfo.Message;
             SetDatePosted();
         }
@@ -32,21 +33,50 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         private void SetDatePosted()
         {
             TimeSpan timeDifference = suggestionsInfo.TimeDifference;
+
             if (timeDifference.TotalSeconds < 60)
             {
-                datePosted.Text = $"{timeDifference.TotalSeconds:F0} second/s ago.";
+                if ((int)timeDifference.TotalSeconds > 1)
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalSeconds} seconds ago.";
+                }
+                else
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalSeconds} second ago.";
+                }
             }
-            else if (timeDifference.TotalMinutes < 1 || timeDifference.TotalHours < 1)
+            else if (timeDifference.TotalMinutes < 60)
             {
-                datePosted.Text = $"{timeDifference.TotalMinutes:F0} minute/s ago.";
+                if ((int)timeDifference.TotalMinutes > 1)
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalMinutes} minutes ago.";
+                }
+                else
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalMinutes} minute ago.";
+                }
             }
-            else if (timeDifference.TotalDays < 1)
+            else if (timeDifference.TotalHours < 24)
             {
-                datePosted.Text = $"{timeDifference.TotalHours:F0} hour/s ago.";
+                if ((int)timeDifference.TotalHours > 1)
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalHours} hours ago.";
+                }
+                else
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalHours} hour ago.";
+                }
             }
             else
             {
-                datePosted.Text = $"{timeDifference.TotalDays:F0} day/s ago.";
+                if ((int)timeDifference.TotalDays > 1)
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalDays} days ago.";
+                }
+                else
+                {
+                    datePosted.Text = $"{(int)timeDifference.TotalDays} day ago.";
+                }
             }
         }
 
@@ -54,6 +84,33 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         {
             ClickedSuggestion clickedSuggestion = new ClickedSuggestion();
             clickedSuggestion.ShowDialog();
+
+        }
+
+        private void upvoteBtn_Click(object sender, EventArgs e)
+        {
+            suggestionsInfo.UpVotes++;
+            voteCounts.Text = (suggestionsInfo.UpVotes - suggestionsInfo.DownVotes).ToString();
+            //upvoteBtn.IconColor = Color.Lime;
+            upvoteBtn.Cursor = Cursors.Default;
+
+            downvoteBtn.Cursor = Cursors.Hand;
+            downvoteBtn.IconColor = Color.Black;
+        }
+
+        private void downvoteBtn_Click(object sender, EventArgs e)
+        {
+            suggestionsInfo.DownVotes++;
+            voteCounts.Text = (suggestionsInfo.UpVotes - suggestionsInfo.DownVotes).ToString();
+            downvoteBtn.IconColor = Color.Red;
+            downvoteBtn.Cursor = Cursors.Default;
+
+            upvoteBtn.Cursor = Cursors.Hand;
+            //upvoteBtn.IconColor = Color.Black;
+        }
+
+        private void upvoteBtn_Enter(object sender, EventArgs e)
+        {
 
         }
     }

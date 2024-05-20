@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentFeedbacksandSuggestionSystem.Admin;
+using System;
 using System.Windows.Forms;
 
 namespace StudentFeedbacksandSuggestionSystem
@@ -13,37 +14,7 @@ namespace StudentFeedbacksandSuggestionSystem
         public FormManager(MainForm mainForm)
         {
             _mainForm = mainForm;
-            _adminDashboard = new AdminDashboard();
-            WireUpEvents(); // Initialize event handlers
-        }
-
-        private void WireUpEvents()
-        {
-            // Attach event handlers for form navigation
-            _mainForm.LoginRequested += userInfo =>
-            {
-                if (userInfo.Role != null)
-                {
-                    if (userInfo.Role == "admin")
-                    {
-                        ShowAdminDashboard();
-                    }
-                    else if (userInfo.Role == "student")
-                    {
-                        this.userInfo = userInfo;
-                        ShowStudentDashboard();
-                    }
-                }
-            };
-            if (_studentDashboard != null)
-            {
-                _studentDashboard.LogoutRequested += Logout;
-                _studentDashboard.FormClosed += Exit;
-            }
-                _adminDashboard.LogoutRequested += Logout;
-                _adminDashboard.FormClosed += Exit;
-
-            _mainForm.FormClosed += Exit;
+            _adminDashboard = new AdminDashboard(this);
         }
 
         public void Start()
@@ -51,33 +22,37 @@ namespace StudentFeedbacksandSuggestionSystem
             Application.Run(_mainForm);
         }
 
-        private void ShowStudentDashboard()
+        public void ShowStudentDashboard()
         {
             _mainForm.Hide();
 
-            // Create a new StudentDashboard instance and attach event handlers
-            _studentDashboard = new StudentDashboard(userInfo);
-            _studentDashboard.LogoutRequested += Logout;
+            _studentDashboard = new StudentDashboard(userInfo, this);
             _studentDashboard.FormClosed += Exit;
 
             _studentDashboard.Show();
         }
 
-        private void ShowAdminDashboard()
+        public void ShowAdminDashboard()
         {
             _mainForm.Hide();
             _adminDashboard.Show();
         }
 
-        private void Logout(object sender, EventArgs e)
+        public void Login(UserInfo userInfo)
         {
-            // Reset login status
+            this.userInfo = userInfo;
+            if (userInfo.Role.Equals("admin"))
+                ShowAdminDashboard();
+            else
+                ShowStudentDashboard();
+        }
+
+        public void Logout()
+        {
             _mainForm.IsLoggedIn = false;
 
-            // Show the MainForm again
             _mainForm.Show();
 
-            // Close the dashboard form
             if (_studentDashboard != null)
             {
             _studentDashboard.Hide();
