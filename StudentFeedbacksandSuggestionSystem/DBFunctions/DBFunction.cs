@@ -227,12 +227,13 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
         {
             List<SuggestionsInfo> suggestionsInfo = new List<SuggestionsInfo>();
             string author, title, message;
+            int suggestion_id, votes;
             DateTime dateTime;
 
             try
             {
                 Connection.Connection.DB();
-                query = "SELECT users.firstname, users.lastname, suggestions.title, suggestions.message, suggestions.date_created FROM users INNER JOIN suggestions ON users.user_id = suggestions.user_id";
+                query = "SELECT users.firstname, users.lastname, suggestions.suggestion_id, suggestions.title, suggestions.message, suggestions.votes, suggestions.date_created FROM users INNER JOIN suggestions ON users.user_id = suggestions.user_id";
                 command = new OleDbCommand(query, Connection.Connection.conn);
                 reader = command.ExecuteReader();
 
@@ -240,15 +241,19 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 {
                     while (reader.Read())
                     {
+                        suggestion_id = Convert.ToInt32(reader["suggestion_id"]);
                         title = reader["title"].ToString();
                         author = reader["firstname"].ToString() + " " + reader["lastname"].ToString();
                         message = reader["message"].ToString();
+                        votes = Convert.ToInt32(reader["votes"]);
                         dateTime = Convert.ToDateTime(reader["date_created"]);
                         SuggestionsInfo suggestion = new SuggestionsInfo
                         {
+                            Suggestion_ID = suggestion_id,
                             Title = title,
                             Author = author,
                             Message = message,
+                            Votes = votes,
                             CreatedDate = dateTime
                         };
                         suggestionsInfo.Add(suggestion);
@@ -262,11 +267,43 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("asaasd"+ex.Message);
                 Connection.Connection.conn.Close();
             }
 
             return suggestionsInfo;
+        }
+
+            public static bool UpdateVotes(int suggestion_id, bool upVote)
+            {
+                try
+                {
+                    Connection.Connection.DB();
+                    if(upVote)
+                    query = "UPDATE suggestions SET votes = votes + 1 WHERE suggestion_id = ?";
+                    else
+                    query = "UPDATE suggestions SET votes = votes - 1 WHERE suggestion_id = ?";
+                command = new OleDbCommand(query, Connection.Connection.conn);
+                    command.Parameters.AddWithValue("@suggestion_id", suggestion_id);
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    // Update successful
+                    return true;
+                }
+                else
+                {
+                    // No rows updated
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions (e.g., connection error, invalid user_id, etc.)
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
         }
 
         public static bool EditProfile(string firstname, string lastname, string username, string email, int userid)

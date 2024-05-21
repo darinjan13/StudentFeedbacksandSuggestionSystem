@@ -15,11 +15,28 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
     public partial class SuggestionCard : Form
     {
         SuggestionsInfo suggestionsInfo;
-        public SuggestionCard(SuggestionsInfo suggestionsInfo)
+        Home home;
+        bool sorted;
+        public SuggestionCard(SuggestionsInfo suggestionsInfo, Home home, bool sorted)
         {
             InitializeComponent();
             this.suggestionsInfo = suggestionsInfo;
+            this.home = home;
             SetLabelValue();
+            this.sorted = sorted;
+
+            HideButtons();
+        }
+
+        private void HideButtons()
+        {
+            if (sorted)
+            {
+                upvoteBtn.Visible = false;
+                downvoteBtn.Visible = false;
+                voteCounts.Size = new Size(90, 40);
+            }
+            
         }
         
         private void SetLabelValue()
@@ -27,6 +44,7 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
             titleLabel.Text = suggestionsInfo.Title;
             authorLabel.Text = "By: " + suggestionsInfo.Author;
             messageLabel.Text = suggestionsInfo.Message;
+            voteCounts.Text = suggestionsInfo.Votes.ToString();
             SetDatePosted();
         }
 
@@ -89,24 +107,39 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
 
         private void upvoteBtn_Click(object sender, EventArgs e)
         {
-            suggestionsInfo.UpVotes++;
-            voteCounts.Text = (suggestionsInfo.UpVotes - suggestionsInfo.DownVotes).ToString();
-            //upvoteBtn.IconColor = Color.Lime;
-            upvoteBtn.Cursor = Cursors.Default;
+            if(DBFunction.DBFunction.UpdateVotes(suggestionsInfo.Suggestion_ID, true))
+            {
+                voteCounts.Text = suggestionsInfo.Votes.ToString();
+                upvoteBtn.IconColor = Color.Lime;
+                upvoteBtn.Cursor = Cursors.Default;
+                upvoteBtn.Enabled = false;
 
-            downvoteBtn.Cursor = Cursors.Hand;
-            downvoteBtn.IconColor = Color.Black;
+                downvoteBtn.Enabled = true;
+                downvoteBtn.Cursor = Cursors.Hand;
+                downvoteBtn.IconColor = Color.Black;
+
+                home.DisplayMostVotes();
+            }
+            
         }
 
         private void downvoteBtn_Click(object sender, EventArgs e)
         {
-            suggestionsInfo.DownVotes++;
-            voteCounts.Text = (suggestionsInfo.UpVotes - suggestionsInfo.DownVotes).ToString();
-            downvoteBtn.IconColor = Color.Red;
-            downvoteBtn.Cursor = Cursors.Default;
+            if(DBFunction.DBFunction.UpdateVotes(suggestionsInfo.Suggestion_ID, false))
+            {
+                voteCounts.Text = suggestionsInfo.Votes.ToString();
+                downvoteBtn.IconColor = Color.Red;
+                downvoteBtn.Cursor = Cursors.Default;
+                downvoteBtn.Enabled = false;
 
-            upvoteBtn.Cursor = Cursors.Hand;
-            //upvoteBtn.IconColor = Color.Black;
+                upvoteBtn.Enabled = true;
+                upvoteBtn.Cursor = Cursors.Hand;
+                upvoteBtn.IconColor = Color.Black;
+            }
+
+            
+
+            home.DisplayMostVotes();
         }
 
         private void upvoteBtn_Enter(object sender, EventArgs e)

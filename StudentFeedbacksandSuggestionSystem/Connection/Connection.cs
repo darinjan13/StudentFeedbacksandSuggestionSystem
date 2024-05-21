@@ -12,7 +12,7 @@ namespace StudentFeedbacksandSuggestionSystem.Connection
     internal class Connection
     {
         public static OleDbConnection conn;
-        private static string dbconnect = "Provider=Microsoft.ACE.OleDb.12.0; Data Source=StudentFeedbackAndSuggestionsDB.accdb";
+        private static string dbconnect = "Provider=Microsoft.ACE.OleDb.12.0; Data Source=" + Application.StartupPath + "\\StudentFeedbackAndSuggestionsDB.accdb";
 
         public static void DB()
         {

@@ -25,7 +25,7 @@ namespace StudentFeedbacksandSuggestionSystem
         {
             string username;
             string password;
-            //retrieving username and password from the database
+            
             if (string.IsNullOrWhiteSpace(txtusername.Texts) && string.IsNullOrWhiteSpace(txtpassword.Texts))
             {
                 MessageBox.Show("Username and Password must not be empty!");

@@ -63,6 +63,16 @@ namespace StudentFeedbacksandSuggestionSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_spinner {
+            get {
+                object obj = ResourceManager.GetObject("icons8-spinner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MainBackgroundImage {
             get {
                 object obj = ResourceManager.GetObject("MainBackgroundImage", resourceCulture);

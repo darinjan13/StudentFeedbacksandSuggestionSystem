@@ -14,6 +14,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 {
     public partial class Home : Form
     {
+        LoadingScreen loadingScreen = new LoadingScreen();
         UserInfo userInfo;
         private List<SuggestionsInfo> suggestionsInfos;
 
@@ -22,34 +23,53 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
             InitializeComponent();
             this.userInfo = userInfo;
             DisplaySuggestions();
-            //DisplayLatest();
+            DisplayMostVotes();
         }
 
-        private void DisplayMostVotes()
+        public void DisplayMostVotes()
         {
+            loadingScreen.TopLevel = false;
+            panel3.Controls.Add(loadingScreen);
+            loadingScreen.Show();
             suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
 
-            var sortedSuggestions = suggestionsInfos.OrderByDescending(s => s.UpVotes - s.DownVotes).ToList();
+            timer1.Enabled = true;
+            timer1.Start();
+            timer1.Interval = 100;
+            timer1.Tick += (sender, e) => {
+                if (suggestionsInfos != null)
+                {
+                    var sortedSuggestions = suggestionsInfos.Where(s => s.Votes > 10).OrderByDescending(s => s.Votes).ToList();
 
-            latestSuggestionsLayout.Controls.Clear();
+                    latestSuggestionsLayout.Controls.Clear();
 
-            if (sortedSuggestions.Any())
-            {
-                SuggestionCard suggestionCard = new SuggestionCard(sortedSuggestions[0]);
-                suggestionCard.TopLevel = false;
-                latestSuggestionsLayout.Controls.Add(suggestionCard);
-                suggestionCard.Show();
-            }
+                    foreach (var suggestions in sortedSuggestions)
+                    {
+                        SuggestionCard suggestionCard = new SuggestionCard(suggestions, this, true);
+                        suggestionCard.TopLevel = false;
+                        latestSuggestionsLayout.Controls.Add(suggestionCard);
+                        suggestionCard.Show();
+                    }
+
+                    loadingScreen.Hide();
+
+
+                    timer1.Stop();
+                }
+            };
         }
 
         private void DisplaySuggestions()
         {
             suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
+
             var sortedSuggestions = suggestionsInfos.OrderBy(s => s.TimeDifference.TotalSeconds).ToList();
+
             suggestionsLayout.Controls.Clear();
+
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(suggestions);
+                SuggestionCard suggestionCard = new SuggestionCard(suggestions, this, false);
                 suggestionCard.TopLevel = false;
                 suggestionsLayout.Controls.Add(suggestionCard);
                 suggestionCard.Show();
@@ -62,11 +82,11 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
             {
                 MessageBox.Show("Added.");
                 suggestionMessage.Texts = null;
-                DisplaySuggestions();
-                DisplayMostVotes();
             }
             else
                 MessageBox.Show("Error Submiting Suggestion.");
+            DisplaySuggestions();
         }
+
     }
 }
