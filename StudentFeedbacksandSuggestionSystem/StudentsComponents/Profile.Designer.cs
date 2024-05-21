@@ -30,20 +30,19 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fullnameLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.customButton1 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
-            this.customButton2 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.fullnameLabel = new System.Windows.Forms.Label();
+            this.suggestionsLayout = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -68,26 +67,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 2;
             // 
-            // fullnameLabel
-            // 
-            this.fullnameLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullnameLabel.Location = new System.Drawing.Point(57, 245);
-            this.fullnameLabel.Name = "fullnameLabel";
-            this.fullnameLabel.Size = new System.Drawing.Size(203, 31);
-            this.fullnameLabel.TabIndex = 9;
-            this.fullnameLabel.Text = "Full Name";
-            this.fullnameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.fullnameLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(327, 450);
-            this.panel2.TabIndex = 13;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel5);
@@ -99,6 +78,15 @@
             this.panel3.Size = new System.Drawing.Size(444, 450);
             this.panel3.TabIndex = 14;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.suggestionsLayout);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(20, 69);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(404, 361);
+            this.panel5.TabIndex = 1;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label5);
@@ -107,16 +95,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(404, 43);
             this.panel4.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.customButton2);
-            this.panel5.Controls.Add(this.customButton1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(20, 69);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(404, 361);
-            this.panel5.TabIndex = 1;
             // 
             // label5
             // 
@@ -129,41 +107,33 @@
             this.label5.Text = "Your Suggestions";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton1
+            // panel2
             // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 0;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(74, 57);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(150, 40);
-            this.customButton1.TabIndex = 0;
-            this.customButton1.Text = "customButton1";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.fullnameLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(327, 450);
+            this.panel2.TabIndex = 13;
             // 
-            // customButton2
+            // fullnameLabel
             // 
-            this.customButton2.BackColor = System.Drawing.Color.Transparent;
-            this.customButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton2.BorderRadius = 0;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(74, 118);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(150, 40);
-            this.customButton2.TabIndex = 1;
-            this.customButton2.Text = "customButton2";
-            this.customButton2.TextColor = System.Drawing.Color.Black;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.fullnameLabel.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullnameLabel.Location = new System.Drawing.Point(12, 250);
+            this.fullnameLabel.Name = "fullnameLabel";
+            this.fullnameLabel.Size = new System.Drawing.Size(312, 31);
+            this.fullnameLabel.TabIndex = 9;
+            this.fullnameLabel.Text = "Full Name";
+            this.fullnameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // suggestionsLayout
+            // 
+            this.suggestionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suggestionsLayout.Location = new System.Drawing.Point(0, 0);
+            this.suggestionsLayout.Name = "suggestionsLayout";
+            this.suggestionsLayout.Size = new System.Drawing.Size(404, 361);
+            this.suggestionsLayout.TabIndex = 0;
             // 
             // Profile
             // 
@@ -173,13 +143,14 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Profile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -194,7 +165,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private CustomControls.CustomButton customButton2;
-        private CustomControls.CustomButton customButton1;
+        private System.Windows.Forms.FlowLayoutPanel suggestionsLayout;
     }
 }

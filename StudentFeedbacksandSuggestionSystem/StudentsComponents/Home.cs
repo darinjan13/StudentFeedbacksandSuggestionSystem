@@ -22,21 +22,23 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
         {
             InitializeComponent();
             this.userInfo = userInfo;
+            timer1.Interval = 1000;
             DisplaySuggestions();
             DisplayMostVotes();
         }
 
         public void DisplayMostVotes()
         {
+
+            latestSuggestionsLayout.Hide();
             loadingScreen.TopLevel = false;
-            panel3.Controls.Add(loadingScreen);
+            panel2.Controls.Add(loadingScreen);
             loadingScreen.Show();
-            suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
 
             timer1.Enabled = true;
             timer1.Start();
-            timer1.Interval = 100;
             timer1.Tick += (sender, e) => {
+            suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
                 if (suggestionsInfos != null)
                 {
                     var sortedSuggestions = suggestionsInfos.Where(s => s.Votes > 10).OrderByDescending(s => s.Votes).ToList();
@@ -45,21 +47,26 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
                     foreach (var suggestions in sortedSuggestions)
                     {
-                        SuggestionCard suggestionCard = new SuggestionCard(suggestions, this, true);
+                        SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, this, true);
                         suggestionCard.TopLevel = false;
                         latestSuggestionsLayout.Controls.Add(suggestionCard);
                         suggestionCard.Show();
                     }
 
                     loadingScreen.Hide();
-
+                    latestSuggestionsLayout.Show();
 
                     timer1.Stop();
+                }
+                else
+                {
+                    MessageBox.Show("Currently no suggestions.");
                 }
             };
         }
 
-        private void DisplaySuggestions()
+
+        public void DisplaySuggestions()
         {
             suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
 
@@ -69,11 +76,12 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(suggestions, this, false);
+                SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, this, false);
                 suggestionCard.TopLevel = false;
                 suggestionsLayout.Controls.Add(suggestionCard);
                 suggestionCard.Show();
             }
+
         }
 
         private void addSuggestion_Click(object sender, EventArgs e)

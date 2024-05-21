@@ -57,6 +57,7 @@ namespace StudentFeedbacksandSuggestionSystem
             if (progressBar1.Value != 200)
             {
                 button1.Enabled = false;
+                Cursor = Cursors.WaitCursor;
                 progressBar1.Value++;
             }
             else

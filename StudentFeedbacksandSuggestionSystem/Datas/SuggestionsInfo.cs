@@ -13,8 +13,6 @@ namespace StudentFeedbacksandSuggestionSystem.Datas
         public string Title { get; set; }
         public string Message { get; set; }
         public int Votes { get; set; }
-        public int UpVotes { get; set; }
-        public int DownVotes { get; set; }
         public DateTime CreatedDate { get; set; }
         public TimeSpan TimeDifference
         {
