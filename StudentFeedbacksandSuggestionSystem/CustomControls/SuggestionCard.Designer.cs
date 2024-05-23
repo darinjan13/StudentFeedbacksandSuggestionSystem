@@ -61,8 +61,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(330, 199);
+            this.panel1.Size = new System.Drawing.Size(450, 300);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.customButton1_Click);
             // 
@@ -71,9 +72,11 @@
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.messageLabel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 46);
+            this.panel4.Location = new System.Drawing.Point(0, 57);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(330, 107);
+            this.panel4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.panel4.Size = new System.Drawing.Size(450, 186);
             this.panel4.TabIndex = 2;
             this.panel4.Click += new System.EventHandler(this.customButton1_Click);
             // 
@@ -83,18 +86,22 @@
             this.panel7.Controls.Add(this.downvoteBtn);
             this.panel7.Controls.Add(this.upvoteBtn);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Location = new System.Drawing.Point(20, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(53, 107);
+            this.panel7.Padding = new System.Windows.Forms.Padding(0, 30, 0, 30);
+            this.panel7.Size = new System.Drawing.Size(71, 186);
             this.panel7.TabIndex = 2;
             // 
             // voteCounts
             // 
             this.voteCounts.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.voteCounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.voteCounts.Location = new System.Drawing.Point(0, 37);
+            this.voteCounts.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.voteCounts.Location = new System.Drawing.Point(0, 76);
+            this.voteCounts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.voteCounts.Name = "voteCounts";
-            this.voteCounts.Size = new System.Drawing.Size(53, 31);
+            this.voteCounts.Size = new System.Drawing.Size(71, 32);
             this.voteCounts.TabIndex = 4;
             this.voteCounts.Text = "0";
             this.voteCounts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,9 +114,10 @@
             this.downvoteBtn.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
             this.downvoteBtn.IconColor = System.Drawing.Color.Black;
             this.downvoteBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.downvoteBtn.Location = new System.Drawing.Point(0, 68);
+            this.downvoteBtn.Location = new System.Drawing.Point(0, 108);
+            this.downvoteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.downvoteBtn.Name = "downvoteBtn";
-            this.downvoteBtn.Size = new System.Drawing.Size(53, 39);
+            this.downvoteBtn.Size = new System.Drawing.Size(71, 48);
             this.downvoteBtn.TabIndex = 3;
             this.downvoteBtn.UseVisualStyleBackColor = false;
             this.downvoteBtn.Click += new System.EventHandler(this.downvoteBtn_Click);
@@ -122,9 +130,10 @@
             this.upvoteBtn.IconChar = FontAwesome.Sharp.IconChar.AngleUp;
             this.upvoteBtn.IconColor = System.Drawing.Color.Black;
             this.upvoteBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.upvoteBtn.Location = new System.Drawing.Point(0, 0);
+            this.upvoteBtn.Location = new System.Drawing.Point(0, 30);
+            this.upvoteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.upvoteBtn.Name = "upvoteBtn";
-            this.upvoteBtn.Size = new System.Drawing.Size(53, 37);
+            this.upvoteBtn.Size = new System.Drawing.Size(71, 46);
             this.upvoteBtn.TabIndex = 2;
             this.upvoteBtn.UseVisualStyleBackColor = false;
             this.upvoteBtn.Click += new System.EventHandler(this.upvoteBtn_Click);
@@ -132,10 +141,11 @@
             // messageLabel
             // 
             this.messageLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.messageLabel.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageLabel.Location = new System.Drawing.Point(80, 0);
+            this.messageLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLabel.Location = new System.Drawing.Point(99, 0);
+            this.messageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(250, 107);
+            this.messageLabel.Size = new System.Drawing.Size(351, 186);
             this.messageLabel.TabIndex = 1;
             this.messageLabel.Text = "Message";
             this.messageLabel.Click += new System.EventHandler(this.customButton1_Click);
@@ -145,9 +155,10 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 153);
+            this.panel3.Location = new System.Drawing.Point(0, 243);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(330, 46);
+            this.panel3.Size = new System.Drawing.Size(450, 57);
             this.panel3.TabIndex = 1;
             this.panel3.Click += new System.EventHandler(this.customButton1_Click);
             // 
@@ -155,19 +166,21 @@
             // 
             this.panel6.Controls.Add(this.authorLabel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(154, 0);
+            this.panel6.Location = new System.Drawing.Point(215, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(176, 46);
+            this.panel6.Size = new System.Drawing.Size(235, 57);
             this.panel6.TabIndex = 1;
             this.panel6.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // authorLabel
             // 
             this.authorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.authorLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authorLabel.Location = new System.Drawing.Point(0, 0);
+            this.authorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.authorLabel.Name = "authorLabel";
-            this.authorLabel.Size = new System.Drawing.Size(176, 46);
+            this.authorLabel.Size = new System.Drawing.Size(235, 57);
             this.authorLabel.TabIndex = 1;
             this.authorLabel.Text = "Author";
             this.authorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,18 +191,20 @@
             this.panel5.Controls.Add(this.datePosted);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(120, 46);
+            this.panel5.Size = new System.Drawing.Size(160, 57);
             this.panel5.TabIndex = 0;
             this.panel5.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // datePosted
             // 
             this.datePosted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datePosted.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePosted.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePosted.Location = new System.Drawing.Point(0, 0);
+            this.datePosted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.datePosted.Name = "datePosted";
-            this.datePosted.Size = new System.Drawing.Size(120, 46);
+            this.datePosted.Size = new System.Drawing.Size(160, 57);
             this.datePosted.TabIndex = 1;
             this.datePosted.Text = "Date Posted";
             this.datePosted.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,18 +215,20 @@
             this.panel2.Controls.Add(this.titleLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(330, 46);
+            this.panel2.Size = new System.Drawing.Size(450, 57);
             this.panel2.TabIndex = 0;
             this.panel2.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // titleLabel
             // 
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLabel.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(330, 46);
+            this.titleLabel.Size = new System.Drawing.Size(450, 57);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Title";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,14 +236,16 @@
             // 
             // SuggestionCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(330, 199);
+            this.ClientSize = new System.Drawing.Size(450, 300);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(450, 300);
             this.Name = "SuggestionCard";
             this.Text = "SuggestionCard";
             this.Click += new System.EventHandler(this.customButton1_Click);

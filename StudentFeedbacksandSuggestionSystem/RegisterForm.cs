@@ -34,6 +34,7 @@ namespace StudentFeedbacksandSuggestionSystem
 
                 if (registered)
                 {
+                    MessageBox.Show("Registered Successfuly.");
                     mainForm.LoadLogin();
                 }
             } catch (FormatException)

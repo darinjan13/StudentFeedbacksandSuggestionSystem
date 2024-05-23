@@ -42,12 +42,14 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1054, 55);
+            this.panel1.Size = new System.Drawing.Size(1924, 68);
             this.panel1.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -57,27 +59,28 @@
             this.flowLayoutPanel1.Controls.Add(this.settingsButton);
             this.flowLayoutPanel1.Controls.Add(this.logoutButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(430, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1305, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(624, 55);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(619, 68);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // homeButton
             // 
-            this.homeButton.BackColor = System.Drawing.Color.Transparent;
-            this.homeButton.BackgroundColor = System.Drawing.Color.Transparent;
-            this.homeButton.BorderColor = System.Drawing.Color.Black;
+            this.homeButton.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.homeButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.homeButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.homeButton.BorderRadius = 0;
-            this.homeButton.BorderSize = 1;
-            this.homeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homeButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeButton.BorderSize = 0;
+            this.homeButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.homeButton.FlatAppearance.BorderSize = 0;
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeButton.ForeColor = System.Drawing.Color.Black;
             this.homeButton.Location = new System.Drawing.Point(3, 3);
             this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(150, 49);
-            this.homeButton.TabIndex = 0;
+            this.homeButton.Size = new System.Drawing.Size(145, 65);
+            this.homeButton.TabIndex = 2;
             this.homeButton.Text = "Home";
             this.homeButton.TextColor = System.Drawing.Color.Black;
             this.homeButton.UseVisualStyleBackColor = false;
@@ -85,20 +88,20 @@
             // 
             // profileButton
             // 
-            this.profileButton.BackColor = System.Drawing.Color.Transparent;
-            this.profileButton.BackgroundColor = System.Drawing.Color.Transparent;
-            this.profileButton.BorderColor = System.Drawing.Color.Black;
+            this.profileButton.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.profileButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.profileButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.profileButton.BorderRadius = 0;
             this.profileButton.BorderSize = 0;
-            this.profileButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.profileButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.profileButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.profileButton.FlatAppearance.BorderSize = 0;
             this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profileButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profileButton.ForeColor = System.Drawing.Color.Black;
-            this.profileButton.Location = new System.Drawing.Point(159, 3);
+            this.profileButton.Location = new System.Drawing.Point(154, 3);
             this.profileButton.Name = "profileButton";
-            this.profileButton.Size = new System.Drawing.Size(150, 49);
-            this.profileButton.TabIndex = 1;
+            this.profileButton.Size = new System.Drawing.Size(150, 65);
+            this.profileButton.TabIndex = 2;
             this.profileButton.Text = "Profile";
             this.profileButton.TextColor = System.Drawing.Color.Black;
             this.profileButton.UseVisualStyleBackColor = false;
@@ -106,19 +109,19 @@
             // 
             // settingsButton
             // 
-            this.settingsButton.BackColor = System.Drawing.Color.Transparent;
-            this.settingsButton.BackgroundColor = System.Drawing.Color.Transparent;
-            this.settingsButton.BorderColor = System.Drawing.Color.Black;
+            this.settingsButton.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.settingsButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.settingsButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.settingsButton.BorderRadius = 0;
             this.settingsButton.BorderSize = 0;
-            this.settingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.settingsButton.FlatAppearance.BorderSize = 0;
             this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.ForeColor = System.Drawing.Color.Black;
-            this.settingsButton.Location = new System.Drawing.Point(315, 3);
+            this.settingsButton.Location = new System.Drawing.Point(310, 3);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(150, 49);
+            this.settingsButton.Size = new System.Drawing.Size(150, 65);
             this.settingsButton.TabIndex = 2;
             this.settingsButton.Text = "Settings";
             this.settingsButton.TextColor = System.Drawing.Color.Black;
@@ -127,20 +130,20 @@
             // 
             // logoutButton
             // 
-            this.logoutButton.BackColor = System.Drawing.Color.Transparent;
-            this.logoutButton.BackgroundColor = System.Drawing.Color.Transparent;
-            this.logoutButton.BorderColor = System.Drawing.Color.Black;
+            this.logoutButton.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.logoutButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.logoutButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.logoutButton.BorderRadius = 0;
             this.logoutButton.BorderSize = 0;
-            this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logoutButton.FlatAppearance.BorderSize = 0;
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.Black;
-            this.logoutButton.Location = new System.Drawing.Point(471, 3);
+            this.logoutButton.Location = new System.Drawing.Point(466, 3);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(150, 49);
-            this.logoutButton.TabIndex = 3;
+            this.logoutButton.Size = new System.Drawing.Size(150, 65);
+            this.logoutButton.TabIndex = 2;
             this.logoutButton.Text = "Logout";
             this.logoutButton.TextColor = System.Drawing.Color.Black;
             this.logoutButton.UseVisualStyleBackColor = false;
@@ -150,26 +153,36 @@
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(69, 55);
+            this.panel2.Size = new System.Drawing.Size(92, 68);
             this.panel2.TabIndex = 0;
             // 
             // mainPanel
             // 
+            this.mainPanel.BackColor = System.Drawing.Color.Transparent;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 55);
+            this.mainPanel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainPanel.Location = new System.Drawing.Point(0, 68);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Padding = new System.Windows.Forms.Padding(20);
-            this.mainPanel.Size = new System.Drawing.Size(1054, 556);
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.mainPanel.Size = new System.Drawing.Size(1924, 885);
             this.mainPanel.TabIndex = 5;
             // 
             // StudentDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 611);
+            this.BackColor = System.Drawing.Color.LightPink;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1924, 953);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "StudentDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentDashboard";
@@ -184,10 +197,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private CustomControls.CustomButton homeButton;
+        private System.Windows.Forms.Panel mainPanel;
         private CustomControls.CustomButton profileButton;
+        private CustomControls.CustomButton homeButton;
         private CustomControls.CustomButton settingsButton;
         private CustomControls.CustomButton logoutButton;
-        private System.Windows.Forms.Panel mainPanel;
     }
 }

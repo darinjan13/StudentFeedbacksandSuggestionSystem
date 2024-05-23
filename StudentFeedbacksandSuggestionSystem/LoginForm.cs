@@ -19,6 +19,8 @@ namespace StudentFeedbacksandSuggestionSystem
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            Cursor = Cursors.Default;
+            button1.Enabled = true;
         }
 
         private void Login()
@@ -65,9 +67,10 @@ namespace StudentFeedbacksandSuggestionSystem
                 timer1.Stop();
                 progressBar1.Value = 0;
                 ClearTextBoxes();
+
                 mainForm.AuthenticateUser(userInfo);
+            
             }
-                button1.Enabled = true;
         }
 
         private void register_Click(object sender, EventArgs e)
@@ -87,6 +90,16 @@ namespace StudentFeedbacksandSuggestionSystem
             {
                 Login();
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -2,12 +2,8 @@
 using StudentFeedbacksandSuggestionSystem.Datas;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
@@ -47,7 +43,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
                     foreach (var suggestions in sortedSuggestions)
                     {
-                        SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, this, true);
+                        SuggestionCard suggestionCard = new SuggestionCard(suggestions, true);
                         suggestionCard.TopLevel = false;
                         latestSuggestionsLayout.Controls.Add(suggestionCard);
                         suggestionCard.Show();
@@ -76,24 +72,13 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, this, false);
+                SuggestionCard suggestionCard = new SuggestionCard(suggestions, false);
                 suggestionCard.TopLevel = false;
+                
                 suggestionsLayout.Controls.Add(suggestionCard);
                 suggestionCard.Show();
             }
 
-        }
-
-        private void addSuggestion_Click(object sender, EventArgs e)
-        {
-            if (DBFunction.DBFunction.AddSuggestions(userInfo.User_id, titleTxtBox.Texts, suggestionMessage.Texts))
-            {
-                MessageBox.Show("Added.");
-                suggestionMessage.Texts = null;
-            }
-            else
-                MessageBox.Show("Error Submiting Suggestion.");
-            DisplaySuggestions();
         }
 
     }

@@ -6,7 +6,7 @@ namespace StudentFeedbacksandSuggestionSystem
 {
     public class FormManager
     {
-        private readonly MainForm _mainForm;
+        private MainForm _mainForm;
         private StudentDashboard _studentDashboard;
         private readonly AdminDashboard _adminDashboard;
         private UserInfo userInfo;
@@ -51,6 +51,7 @@ namespace StudentFeedbacksandSuggestionSystem
         {
             _mainForm.IsLoggedIn = false;
 
+            _mainForm = new MainForm();
             _mainForm.Show();
 
             if (_studentDashboard != null)

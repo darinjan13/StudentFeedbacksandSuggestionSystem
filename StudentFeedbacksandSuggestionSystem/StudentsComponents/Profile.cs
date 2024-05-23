@@ -34,12 +34,23 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(suggestions);
+                SuggestionCard suggestionCard = new SuggestionCard(suggestions, false);
                 suggestionCard.TopLevel = false;
                 suggestionCard.panel6.Hide();
                 suggestionsLayout.Controls.Add(suggestionCard);
                 suggestionCard.Show();
             }
+        }
+
+        private void addSuggestion_Click(object sender, EventArgs e)
+        {
+            if (DBFunction.DBFunction.AddSuggestions(userInfo.User_id, titleTxtBox.Texts, suggestionMessage.Texts))
+            {
+                MessageBox.Show("Added.");
+                suggestionMessage.Texts = null;
+            }
+            else
+                MessageBox.Show("Error Submiting Suggestion.");
         }
     }
 }

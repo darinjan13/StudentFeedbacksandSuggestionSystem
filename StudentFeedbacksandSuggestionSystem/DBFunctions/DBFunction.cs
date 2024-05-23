@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data;
 using System.Web.Security;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using StudentFeedbacksandSuggestionSystem.Datas;
 
 
@@ -123,9 +122,9 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
 
                 int rowsAffected = command.ExecuteNonQuery();
 
-                Connection.Connection.conn.Close();
 
                 success = rowsAffected > 0;
+                Connection.Connection.conn.Close();
             }
             catch (Exception)
             {
@@ -218,7 +217,7 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 result = true;
             } catch (Exception ex)
             {
-                MessageBox.Show("asdas" + ex.Message);
+                MessageBox.Show("Add Message Error: " + ex.Message);
             }
             return result;
         }

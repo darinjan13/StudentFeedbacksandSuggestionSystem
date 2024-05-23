@@ -21,22 +21,10 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         bool sorted;
         bool profile;
 
-        public SuggestionCard(SuggestionsInfo suggestionsInfo)
+        public SuggestionCard(SuggestionsInfo suggestionsInfo,bool sorted)
         {
             InitializeComponent();
             this.suggestionsInfo = suggestionsInfo;
-            SetLabelValue();
-            timer1.Interval = 1000;
-            profile = true;
-            HideButtons();
-        }
-
-        public SuggestionCard(UserInfo userInfo, SuggestionsInfo suggestionsInfo, Home home, bool sorted)
-        {
-            InitializeComponent();
-            this.suggestionsInfo = suggestionsInfo;
-            this.userInfo = userInfo;
-            this.home = home;
             SetLabelValue();
             this.sorted = sorted;
             timer1.Interval = 1000;
@@ -152,7 +140,6 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                         if (suggestionsInfo.Votes > 10)
                         {
                             home.DisplayMostVotes();
-                            home.DisplayMostVotes();
                         }
                         voteCounts.Text = suggestionsInfo.Votes.ToString();
                     }
@@ -196,10 +183,10 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
 
         private void authorLabel_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile(userInfo);
+            /*Profile profile = new Profile(userInfo);
             profile.TopLevel = true;
             profile.FormBorderStyle = FormBorderStyle.Sizable;
-            profile.ShowDialog();
+            profile.ShowDialog();*/
         }
     }
 }

@@ -15,6 +15,17 @@ namespace StudentFeedbacksandSuggestionSystem
     {
         string firstname, lastname, email, gender, username, password, role;
         int ID, age;
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void s(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         public AdminUsers()
         {
             InitializeComponent();
