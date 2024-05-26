@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentFeedbacksandSuggestionSystem.CustomControls
@@ -28,6 +22,7 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+        private bool isReadOnly = false;
 
         //Events
         public event EventHandler _TextChanged;
@@ -38,10 +33,22 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         public CustomTextBox()
         {
             InitializeComponent();
+            textBox1.KeyPress += TextBox1_KeyPress;
         }
 
         //Events
         #region -> Properties
+        [Category("Custom Properties")]
+        public bool IsReadOnly
+        {
+            get { return isReadOnly; }
+            set
+            {
+                isReadOnly = value;
+                textBox1.ReadOnly = value; // Set the TextBox control's ReadOnly property
+            }
+        }
+
         [Category("Custom Properties")]
         public Color BorderColor
         {
@@ -371,6 +378,11 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
             isFocused = false;
             this.Invalidate();
             SetPlaceholder();
+        }
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (IsReadOnly)
+                e.Handled = true; // Prevent any input when read-only
         }
         ///::::+
         #endregion

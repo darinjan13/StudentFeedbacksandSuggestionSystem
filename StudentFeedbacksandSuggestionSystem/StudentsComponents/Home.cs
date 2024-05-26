@@ -37,16 +37,18 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
             suggestionsInfos = DBFunction.DBFunction.GetSuggestions();
                 if (suggestionsInfos != null)
                 {
-                    var sortedSuggestions = suggestionsInfos.Where(s => s.Votes > 10).OrderByDescending(s => s.Votes).ToList();
+                    var sortedSuggestions = suggestionsInfos.Where(s => s.Votes >= 0).OrderByDescending(s => s.Votes).ToList();
 
                     latestSuggestionsLayout.Controls.Clear();
 
                     foreach (var suggestions in sortedSuggestions)
                     {
-                        SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, true);
-                        suggestionCard.TopLevel = false;
-                        latestSuggestionsLayout.Controls.Add(suggestionCard);
-                        suggestionCard.Show();
+                        StudentsComponents.DisplaySuggestions displaySuggestions = new StudentsComponents.DisplaySuggestions(suggestions.Votes, suggestions.Title);
+                        displaySuggestions.TopLevel = false;
+                        displaySuggestions.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+                        latestSuggestionsLayout.Controls.Add(displaySuggestions);
+                        displaySuggestions.Show();
                     }
 
                     loadingScreen.Hide();
@@ -80,6 +82,5 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
             }
 
         }
-
     }
 }

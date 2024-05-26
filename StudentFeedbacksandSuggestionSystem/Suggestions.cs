@@ -16,14 +16,14 @@ namespace StudentFeedbacksandSuggestionSystem {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class Suggestions : ReportClass {
         
-        public CrystalReport1() {
+        public Suggestions() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "Suggestions.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace StudentFeedbacksandSuggestionSystem {
         
         public override string FullResourceName {
             get {
-                return "StudentFeedbacksandSuggestionSystem.CrystalReport1.rpt";
+                return "StudentFeedbacksandSuggestionSystem.Suggestions.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace StudentFeedbacksandSuggestionSystem {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedSuggestions : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedSuggestions() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace StudentFeedbacksandSuggestionSystem {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            Suggestions rpt = new Suggestions();
             rpt.Site = this.Site;
             return rpt;
         }

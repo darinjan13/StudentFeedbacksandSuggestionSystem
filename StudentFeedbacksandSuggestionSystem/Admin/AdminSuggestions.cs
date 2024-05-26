@@ -28,5 +28,16 @@ namespace StudentFeedbacksandSuggestionSystem.Admin
         {
             Application.Exit();
         }
+
+        private void printReport_Click(object sender, EventArgs e)
+        {
+            ReportViewer reportViewer = new ReportViewer();
+            reportViewer.ShowDialog();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            DBFunction.DBFunction.SearchSuggestion(searchTxtBox.Texts, searchByComboBox.Texts, dataGridView1);
+        }
     }
 }

@@ -37,7 +37,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtusername = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.txtpassword = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customButton1 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -45,8 +44,9 @@
             this.progressBar1.BackColor = System.Drawing.Color.White;
             this.progressBar1.ForeColor = System.Drawing.Color.Transparent;
             this.progressBar1.Location = new System.Drawing.Point(-1, 0);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1083, 13);
+            this.progressBar1.Size = new System.Drawing.Size(1444, 16);
             this.progressBar1.TabIndex = 5;
             // 
             // timer1
@@ -60,9 +60,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(146, 164);
+            this.label3.Location = new System.Drawing.Point(195, 202);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(768, 33);
+            this.label3.Size = new System.Drawing.Size(927, 40);
             this.label3.TabIndex = 7;
             this.label3.Text = "Student Feedbacks and Suggestion Management System";
             // 
@@ -76,9 +77,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(423, 306);
+            this.button1.Location = new System.Drawing.Point(564, 377);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 32);
+            this.button1.Size = new System.Drawing.Size(200, 39);
             this.button1.TabIndex = 10;
             this.button1.Text = "Log in";
             this.button1.UseVisualStyleBackColor = false;
@@ -90,9 +92,10 @@
             this.register.Cursor = System.Windows.Forms.Cursors.Hand;
             this.register.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.register.ForeColor = System.Drawing.Color.Black;
-            this.register.Location = new System.Drawing.Point(550, 358);
+            this.register.Location = new System.Drawing.Point(733, 441);
+            this.register.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.register.Name = "register";
-            this.register.Size = new System.Drawing.Size(64, 20);
+            this.register.Size = new System.Drawing.Size(85, 25);
             this.register.TabIndex = 11;
             this.register.Text = "Register?";
             this.register.Click += new System.EventHandler(this.register_Click);
@@ -102,9 +105,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(375, 358);
+            this.label5.Location = new System.Drawing.Point(500, 441);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 20);
+            this.label5.Size = new System.Drawing.Size(232, 25);
             this.label5.TabIndex = 12;
             this.label5.Text = "Don\'t have an account yet?";
             // 
@@ -117,15 +121,15 @@
             this.txtusername.BorderSize = 2;
             this.txtusername.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.txtusername.ForeColor = System.Drawing.Color.Black;
-            this.txtusername.Location = new System.Drawing.Point(398, 218);
-            this.txtusername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtusername.Location = new System.Drawing.Point(531, 268);
+            this.txtusername.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtusername.Multiline = false;
             this.txtusername.Name = "txtusername";
-            this.txtusername.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtusername.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.txtusername.PasswordChar = false;
             this.txtusername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtusername.PlaceholderText = "Username";
-            this.txtusername.Size = new System.Drawing.Size(197, 34);
+            this.txtusername.Size = new System.Drawing.Size(263, 40);
             this.txtusername.TabIndex = 16;
             this.txtusername.Texts = "";
             this.txtusername.UnderlinedStyle = false;
@@ -140,48 +144,28 @@
             this.txtpassword.BorderSize = 2;
             this.txtpassword.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.txtpassword.ForeColor = System.Drawing.Color.Black;
-            this.txtpassword.Location = new System.Drawing.Point(398, 259);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpassword.Location = new System.Drawing.Point(531, 319);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtpassword.Multiline = false;
             this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtpassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
             this.txtpassword.PasswordChar = true;
             this.txtpassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtpassword.PlaceholderText = "Password";
-            this.txtpassword.Size = new System.Drawing.Size(197, 34);
+            this.txtpassword.Size = new System.Drawing.Size(263, 40);
             this.txtpassword.TabIndex = 17;
             this.txtpassword.Texts = "";
             this.txtpassword.UnderlinedStyle = false;
             this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 0;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(133, 314);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(150, 40);
-            this.customButton1.TabIndex = 18;
-            this.customButton1.Text = "customButton1";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
-            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::StudentFeedbacksandSuggestionSystem.Properties.Resources.MainBackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1081, 576);
-            this.Controls.Add(this.customButton1);
+            this.ClientSize = new System.Drawing.Size(1441, 709);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtusername);
             this.Controls.Add(this.label5);
@@ -191,6 +175,7 @@
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
@@ -198,7 +183,7 @@
             this.Text = "s";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
-            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +198,6 @@
         private System.Windows.Forms.Label label5;
         private CustomControls.CustomTextBox txtusername;
         private CustomControls.CustomTextBox txtpassword;
-        private CustomControls.CustomButton customButton1;
     }
 }
 

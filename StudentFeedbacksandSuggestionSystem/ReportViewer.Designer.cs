@@ -1,6 +1,6 @@
 ﻿namespace StudentFeedbacksandSuggestionSystem
 {
-    partial class RerportViewer
+    partial class ReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport11 = new StudentFeedbacksandSuggestionSystem.CrystalReport1();
+            this.Suggestions1 = new StudentFeedbacksandSuggestionSystem.Suggestions();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -37,22 +37,26 @@
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayToolbar = false;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.ReportSource = this.Suggestions1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1378, 554);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.ToolPanelWidth = 267;
             // 
-            // RerportViewer
+            // ReportViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1378, 554);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "RerportViewer";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "ReportViewer";
             this.Text = "RerportViewer";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RerportViewer_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -60,6 +64,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReport1 CrystalReport11;
+        private Suggestions Suggestions1;
     }
 }

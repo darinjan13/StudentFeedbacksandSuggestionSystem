@@ -63,7 +63,7 @@ namespace StudentFeedbacksandSuggestionSystem
         private void settingsButton_Click(object sender, EventArgs e)
         {
             SetButtonBorders(settingsButton);
-            loadPage(new Settings());
+            loadPage(new Settings(userInfo));
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

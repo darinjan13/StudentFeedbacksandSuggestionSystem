@@ -34,11 +34,12 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, false);
-                suggestionCard.TopLevel = false;
-                suggestionCard.panel6.Hide();
-                suggestionsLayout.Controls.Add(suggestionCard);
-                suggestionCard.Show();
+                StudentsComponents.DisplaySuggestions displaySuggestions = new StudentsComponents.DisplaySuggestions(suggestions.Votes, suggestions.Title);
+                displaySuggestions.TopLevel = false;
+                displaySuggestions.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+                suggestionsLayout.Controls.Add(displaySuggestions);
+                displaySuggestions.Show();
             }
         }
 

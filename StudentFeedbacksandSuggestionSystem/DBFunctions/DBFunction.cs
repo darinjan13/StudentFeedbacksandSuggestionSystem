@@ -218,6 +218,27 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             return result;
         }
 
+        public static void SearchSuggestion(string searchText, string searchBy, DataGridView dataGridView)
+        {
+            try
+            {
+                Connection.Connection.DB();
+                query = $"SELECT * FROM suggestions WHERE {searchBy} LIKE @searchText";
+                command = new OleDbCommand(query, Connection.Connection.conn);
+                command.Parameters.AddWithValue("@searchText", searchText);
+                DataTable dt = new DataTable();
+                OleDbDataAdapter data = null;
+                data = new OleDbDataAdapter(command);
+                data.Fill(dt);
+                dataGridView.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Suggestion Error: " + ex.Message);
+            }
+            Connection.Connection.conn.Close();
+        }
+
         public static List<SuggestionsInfo> GetUserSuggestions(int user_id)
         {
             List<SuggestionsInfo> suggestionsInfo = new List<SuggestionsInfo>();
@@ -263,7 +284,7 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Getting Suggesions Error: " + ex.Message);
+                MessageBox.Show("Getting Users Suggesions Error: " + ex.Message);
                 Connection.Connection.conn.Close();
             }
 
@@ -323,7 +344,6 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
 
         public static bool UpdateVotes(int user_id, int suggestion_id, bool upVote)
         {
-            string query2;
             try
             {
                 Connection.Connection.DB();
@@ -333,8 +353,7 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                 existingVoteCommand.Parameters.AddWithValue("@user_id", user_id);
                 existingVoteCommand.Parameters.AddWithValue("@suggestion_id", suggestion_id);
 
-                using (OleDbDataReader reader = existingVoteCommand.ExecuteReader())
-                {
+                reader = existingVoteCommand.ExecuteReader();
                     if (reader.Read())
                     {
                         bool existingUpVote = Convert.ToBoolean(reader["up_vote"]);
@@ -347,7 +366,6 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
                             return true;
                         }
                     }
-                }
 
                 query = upVote
                 ? "UPDATE suggestions SET votes = votes + 1 WHERE suggestion_id = ?"
@@ -406,30 +424,25 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             }
         }
 
-        public static bool EditProfile(string firstname, string lastname, string username, string email, int userid)
+        public static bool EditProfile(string firstname, string lastname, string email, string username, string password, int userid)
         {
             bool result = false;
             try
             {
                 Connection.Connection.DB();
-                query = "UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ? where user_id = ?";
+                query = "UPDATE users SET firstname = ?, lastname = ?, email = ?, username = ?, [password] = ? where user_id = ?";
                 command = new OleDbCommand(query, Connection.Connection.conn);
-                command.Parameters.AddWithValue("firstname", firstname);
-                command.Parameters.AddWithValue("lastname", lastname);
-                command.Parameters.AddWithValue("username", username);
-                command.Parameters.AddWithValue("email", email);
-                command.Parameters.AddWithValue("userid", userid);
-                if (command.ExecuteNonQuery() > 0)
-                {
-                    MessageBox.Show("Edit Successful");
-                    result = true;
-                }
-                else
-                    result = false;
+                command.Parameters.AddWithValue("@firstname", firstname);
+                command.Parameters.AddWithValue("@lastname", lastname);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@userid", userid);
+                result = command.ExecuteNonQuery() > 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Edit Profile Error: " + ex.Message);
                 Connection.Connection.conn.Close();
             }
 

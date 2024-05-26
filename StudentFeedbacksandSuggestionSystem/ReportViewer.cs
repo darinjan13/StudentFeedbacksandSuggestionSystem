@@ -10,16 +10,12 @@ using System.Windows.Forms;
 
 namespace StudentFeedbacksandSuggestionSystem
 {
-    public partial class RerportViewer : Form
+    public partial class ReportViewer : Form
     {
-        public RerportViewer()
+        public ReportViewer()
         {
             InitializeComponent();
         }
 
-        private void RerportViewer_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

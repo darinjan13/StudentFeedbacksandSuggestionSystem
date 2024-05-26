@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 {
-    public partial class ClickedSuggestion : Form
+    public partial class DisplaySuggestions : Form
     {
-        public ClickedSuggestion()
+        public DisplaySuggestions(int votes, string title)
         {
             InitializeComponent();
+            votesLabel.Text = votes.ToString() + " Votes";
+            titleLabel.Text = title;
         }
     }
 }

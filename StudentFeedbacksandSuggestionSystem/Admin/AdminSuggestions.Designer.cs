@@ -31,11 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.customTextBox1 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customTextBox2 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
-            this.customButton1 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
-            this.customButton2 = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.printReport = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.searchTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.searchBtn = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
+            this.searchByComboBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,20 +48,20 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 500);
+            this.panel1.Size = new System.Drawing.Size(1333, 615);
             this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.customButton2);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.customButton1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 97);
+            this.panel3.Location = new System.Drawing.Point(0, 119);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(20);
-            this.panel3.Size = new System.Drawing.Size(1000, 403);
+            this.panel3.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.panel3.Size = new System.Drawing.Size(1333, 496);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView1
@@ -70,109 +70,121 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 56);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(960, 337);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1279, 415);
             this.dataGridView1.TabIndex = 0;
             // 
-            // customTextBox1
+            // printReport
             // 
-            this.customTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox1.BorderRadius = 0;
-            this.customTextBox1.BorderSize = 2;
-            this.customTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox1.Location = new System.Drawing.Point(210, 13);
-            this.customTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox1.Multiline = false;
-            this.customTextBox1.Name = "customTextBox1";
-            this.customTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox1.PasswordChar = false;
-            this.customTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox1.PlaceholderText = "";
-            this.customTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.customTextBox1.TabIndex = 0;
-            this.customTextBox1.Texts = "";
-            this.customTextBox1.UnderlinedStyle = false;
-            // 
-            // customTextBox2
-            // 
-            this.customTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.customTextBox2.BorderRadius = 0;
-            this.customTextBox2.BorderSize = 2;
-            this.customTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.customTextBox2.Location = new System.Drawing.Point(468, 13);
-            this.customTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.customTextBox2.Multiline = false;
-            this.customTextBox2.Name = "customTextBox2";
-            this.customTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.customTextBox2.PasswordChar = false;
-            this.customTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.customTextBox2.PlaceholderText = "";
-            this.customTextBox2.Size = new System.Drawing.Size(250, 31);
-            this.customTextBox2.TabIndex = 1;
-            this.customTextBox2.Texts = "";
-            this.customTextBox2.UnderlinedStyle = false;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 0;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(297, 0);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(150, 40);
-            this.customButton1.TabIndex = 2;
-            this.customButton1.Text = "customButton1";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton2.BorderRadius = 0;
-            this.customButton2.BorderSize = 0;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(453, 0);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(150, 40);
-            this.customButton2.TabIndex = 3;
-            this.customButton2.Text = "customButton2";
-            this.customButton2.TextColor = System.Drawing.Color.White;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.printReport.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.printReport.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.printReport.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.printReport.BorderRadius = 0;
+            this.printReport.BorderSize = 0;
+            this.printReport.FlatAppearance.BorderSize = 0;
+            this.printReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printReport.ForeColor = System.Drawing.Color.White;
+            this.printReport.Location = new System.Drawing.Point(1106, 69);
+            this.printReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.printReport.Name = "printReport";
+            this.printReport.Size = new System.Drawing.Size(200, 39);
+            this.printReport.TabIndex = 2;
+            this.printReport.Text = "Print Report";
+            this.printReport.TextColor = System.Drawing.Color.White;
+            this.printReport.UseVisualStyleBackColor = false;
+            this.printReport.Click += new System.EventHandler(this.printReport_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.customTextBox2);
-            this.panel2.Controls.Add(this.customTextBox1);
+            this.panel2.Controls.Add(this.printReport);
+            this.panel2.Controls.Add(this.searchByComboBox);
+            this.panel2.Controls.Add(this.searchBtn);
+            this.panel2.Controls.Add(this.searchTxtBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 91);
+            this.panel2.Size = new System.Drawing.Size(1333, 112);
             this.panel2.TabIndex = 0;
+            // 
+            // searchTxtBox
+            // 
+            this.searchTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.searchTxtBox.BorderColor = System.Drawing.Color.LightPink;
+            this.searchTxtBox.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.searchTxtBox.BorderRadius = 0;
+            this.searchTxtBox.BorderSize = 2;
+            this.searchTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.searchTxtBox.Location = new System.Drawing.Point(27, 73);
+            this.searchTxtBox.Margin = new System.Windows.Forms.Padding(4);
+            this.searchTxtBox.Multiline = false;
+            this.searchTxtBox.Name = "searchTxtBox";
+            this.searchTxtBox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.searchTxtBox.PasswordChar = false;
+            this.searchTxtBox.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.searchTxtBox.PlaceholderText = "";
+            this.searchTxtBox.Size = new System.Drawing.Size(250, 35);
+            this.searchTxtBox.TabIndex = 3;
+            this.searchTxtBox.Texts = "";
+            this.searchTxtBox.UnderlinedStyle = false;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.LightPink;
+            this.searchBtn.BackgroundColor = System.Drawing.Color.LightPink;
+            this.searchBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.searchBtn.BorderRadius = 0;
+            this.searchBtn.BorderSize = 0;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.ForeColor = System.Drawing.Color.White;
+            this.searchBtn.Location = new System.Drawing.Point(490, 73);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(150, 35);
+            this.searchBtn.TabIndex = 4;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.TextColor = System.Drawing.Color.White;
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchByComboBox
+            // 
+            this.searchByComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Author",
+            "Title"});
+            this.searchByComboBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.searchByComboBox.BorderColor = System.Drawing.Color.LightPink;
+            this.searchByComboBox.BorderSize = 1;
+            this.searchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.searchByComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.searchByComboBox.ForeColor = System.Drawing.Color.DimGray;
+            this.searchByComboBox.IconColor = System.Drawing.Color.LightPink;
+            this.searchByComboBox.Items.AddRange(new object[] {
+            "Author",
+            "TItle"});
+            this.searchByComboBox.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.searchByComboBox.ListTextColor = System.Drawing.Color.DimGray;
+            this.searchByComboBox.Location = new System.Drawing.Point(284, 73);
+            this.searchByComboBox.MinimumSize = new System.Drawing.Size(200, 30);
+            this.searchByComboBox.Name = "searchByComboBox";
+            this.searchByComboBox.Padding = new System.Windows.Forms.Padding(1);
+            this.searchByComboBox.Size = new System.Drawing.Size(200, 35);
+            this.searchByComboBox.TabIndex = 5;
+            this.searchByComboBox.Texts = "";
             // 
             // AdminSuggestions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.ClientSize = new System.Drawing.Size(1333, 615);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminSuggestions";
             this.Text = "AdminSuggestions";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminSuggestions_FormClosed);
@@ -190,9 +202,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private CustomControls.CustomButton customButton2;
-        private CustomControls.CustomButton customButton1;
-        private CustomControls.CustomTextBox customTextBox2;
-        private CustomControls.CustomTextBox customTextBox1;
+        private CustomControls.CustomButton printReport;
+        private CustomControls.CustomComboBox searchByComboBox;
+        private CustomControls.CustomButton searchBtn;
+        private CustomControls.CustomTextBox searchTxtBox;
     }
 }

@@ -114,8 +114,8 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
 
         private void customButton1_Click(object sender, EventArgs e)
         {
-            ClickedSuggestion clickedSuggestion = new ClickedSuggestion();
-            clickedSuggestion.ShowDialog();
+            //DisplaySuggestions clickedSuggestion = new DisplaySuggestions();
+            //clickedSuggestion.ShowDialog();
 
         }
 
@@ -147,9 +147,10 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                         loadingScreen.Hide();
                         panel1.Show();
                         timer1.Stop();
+                        HasUserVoted();
                         if (suggestionsInfo.Votes > 10)
                         {
-                            home.DisplayMostVotes();
+                            //home.DisplayMostVotes();
                         }
                         voteCounts.Text = suggestionsInfo.Votes.ToString();
                     }
@@ -184,7 +185,8 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                         loadingScreen.Hide();
                         panel1.Show();
                         timer1.Stop();
-                        home.DisplayMostVotes();
+                        HasUserVoted();
+                        //home.DisplayMostVotes();
                         voteCounts.Text = suggestionsInfo.Votes.ToString();
                     }
                 };
