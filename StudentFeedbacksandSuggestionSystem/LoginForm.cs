@@ -101,5 +101,11 @@ namespace StudentFeedbacksandSuggestionSystem
         {
             Application.Exit();
         }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            RerportViewer rerportViewer = new RerportViewer();
+            rerportViewer.Show();
+        }
     }
 }

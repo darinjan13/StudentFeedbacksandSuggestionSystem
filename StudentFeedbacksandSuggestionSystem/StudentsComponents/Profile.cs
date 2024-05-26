@@ -34,7 +34,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(suggestions, false);
+                SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, false);
                 suggestionCard.TopLevel = false;
                 suggestionCard.panel6.Hide();
                 suggestionsLayout.Controls.Add(suggestionCard);

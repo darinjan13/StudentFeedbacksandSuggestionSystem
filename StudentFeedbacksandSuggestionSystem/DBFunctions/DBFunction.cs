@@ -1,13 +1,9 @@
-﻿using System;
+﻿using StudentFeedbacksandSuggestionSystem.Datas;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.OleDb;
 using System.Data;
-using System.Web.Security;
-using StudentFeedbacksandSuggestionSystem.Datas;
+using System.Data.OleDb;
+using System.Windows.Forms;
 
 
 namespace StudentFeedbacksandSuggestionSystem.DBFunction
@@ -325,31 +321,87 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
             return suggestionsInfo;
         }
 
-      public static bool UpdateVotes(int suggestion_id, bool upVote)
+        public static bool UpdateVotes(int user_id, int suggestion_id, bool upVote)
+        {
+            string query2;
+            try
             {
-                try
+                Connection.Connection.DB();
+
+                string existingVoteQuery = "SELECT up_vote, down_vote FROM users_voted WHERE user_id = ? AND suggestion_id = ?";
+                OleDbCommand existingVoteCommand = new OleDbCommand(existingVoteQuery, Connection.Connection.conn);
+                existingVoteCommand.Parameters.AddWithValue("@user_id", user_id);
+                existingVoteCommand.Parameters.AddWithValue("@suggestion_id", suggestion_id);
+
+                using (OleDbDataReader reader = existingVoteCommand.ExecuteReader())
                 {
-                    Connection.Connection.DB();
-                    if(upVote)
-                    query = "UPDATE suggestions SET votes = votes + 1 WHERE suggestion_id = ?";
-                    else
-                    query = "UPDATE suggestions SET votes = votes - 1 WHERE suggestion_id = ?";
-                    command = new OleDbCommand(query, Connection.Connection.conn);
-                    command.Parameters.AddWithValue("@suggestion_id", suggestion_id);
-                int rowsAffected = command.ExecuteNonQuery();
+                    if (reader.Read())
+                    {
+                        bool existingUpVote = Convert.ToBoolean(reader["up_vote"]);
+                        bool existingDownVote = Convert.ToBoolean(reader["down_vote"]);
+
+                        if ((upVote && existingUpVote) || (!upVote && existingDownVote))
+                        {
+                            // User is trying to vote the same way again; no action needed
+                            Connection.Connection.conn.Close();
+                            return true;
+                        }
+                    }
+                }
+
+                query = upVote
+                ? "UPDATE suggestions SET votes = votes + 1 WHERE suggestion_id = ?"
+                : "UPDATE suggestions SET votes = votes - 1 WHERE suggestion_id = ?";
+                OleDbCommand updateCommand = new OleDbCommand(query, Connection.Connection.conn);
+                updateCommand.Parameters.AddWithValue("@suggestion_id", suggestion_id);
+                int rowsAffected = updateCommand.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
                 {
+
+                    string updateExistingVoteQuery = upVote
+                    ? "UPDATE users_voted SET up_vote = true, down_vote = false WHERE user_id = ? AND suggestion_id = ?"
+                    : "UPDATE users_voted SET up_vote = false, down_vote = true WHERE user_id = ? AND suggestion_id = ?";
+                    OleDbCommand updateExistingVoteCommand = new OleDbCommand(updateExistingVoteQuery, Connection.Connection.conn);
+                    updateExistingVoteCommand.Parameters.AddWithValue("@user_id", user_id);
+                    updateExistingVoteCommand.Parameters.AddWithValue("@suggestion_id", suggestion_id);
+                    updateExistingVoteCommand.ExecuteNonQuery();
+
+                    Connection.Connection.conn.Close();
                     return true;
                 }
                 else
                 {
+                    Connection.Connection.conn.Close();
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("UpdateVotes Error: " + ex.Message);
+                Connection.Connection.conn.Close();
+                return false;
+            }
+        }
+
+        public static bool HasUserVoted(int user_id, int suggestion_id)
+        {
+            try
+            {
+                Connection.Connection.DB();
+                query = "SELECT COUNT(*) FROM users_voted WHERE user_id = ? AND suggestion_id = ? AND up_vote = true";
+                command = new OleDbCommand(query, Connection.Connection.conn);
+                command.Parameters.AddWithValue("@user_id", user_id);
+                command.Parameters.AddWithValue("@suggestion_id", suggestion_id);
+
+                int hasVoted = Convert.ToInt32(command.ExecuteScalar());
+
+                Connection.Connection.conn.Close();
+                return hasVoted > 0;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("HasUserVoted Error: " + ex.Message);
+                Connection.Connection.conn.Close();
                 return false;
             }
         }

@@ -21,15 +21,25 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         bool sorted;
         bool profile;
 
-        public SuggestionCard(SuggestionsInfo suggestionsInfo,bool sorted)
+        public SuggestionCard(UserInfo userInfo, SuggestionsInfo suggestionsInfo,bool sorted)
         {
             InitializeComponent();
             this.suggestionsInfo = suggestionsInfo;
+            this.userInfo = userInfo;
             SetLabelValue();
             this.sorted = sorted;
             timer1.Interval = 1000;
-
             HideButtons();
+            HasUserVoted();
+        }
+        private void HasUserVoted()
+        {
+            if (DBFunction.DBFunction.HasUserVoted(userInfo.User_id, suggestionsInfo.Suggestion_ID))
+            {
+                upvoteBtn.Enabled = false;
+            }
+            else
+                downvoteBtn.Enabled = false;
         }
 
         private void HideButtons()
@@ -124,7 +134,7 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                 timer1.Start();
                 timer1.Tick += (s, ev) =>
                 {
-                    if (DBFunction.DBFunction.UpdateVotes(suggestionsInfo.Suggestion_ID, true))
+                    if (DBFunction.DBFunction.UpdateVotes(userInfo.User_id,suggestionsInfo.Suggestion_ID, true))
                     {
                         suggestionsInfo.Votes++;
                         upvoteBtn.IconColor = Color.Lime;
@@ -162,7 +172,7 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                 timer1.Start();
                 timer1.Tick += (s, ev) =>
                 {
-                    if (DBFunction.DBFunction.UpdateVotes(suggestionsInfo.Suggestion_ID, false))
+                    if (DBFunction.DBFunction.UpdateVotes(userInfo.User_id, suggestionsInfo.Suggestion_ID, false))
                     {
                         suggestionsInfo.Votes--;
                         downvoteBtn.IconColor = Color.Red;

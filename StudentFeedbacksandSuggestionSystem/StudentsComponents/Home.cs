@@ -43,7 +43,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
                     foreach (var suggestions in sortedSuggestions)
                     {
-                        SuggestionCard suggestionCard = new SuggestionCard(suggestions, true);
+                        SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, true);
                         suggestionCard.TopLevel = false;
                         latestSuggestionsLayout.Controls.Add(suggestionCard);
                         suggestionCard.Show();
@@ -72,7 +72,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(suggestions, false);
+                SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, false);
                 suggestionCard.TopLevel = false;
                 
                 suggestionsLayout.Controls.Add(suggestionCard);
