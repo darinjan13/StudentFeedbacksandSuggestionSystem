@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.printUsers = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.deleteBtn = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.registerBtn = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,7 +53,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Pink;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.printUsers);
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.registerBtn);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -66,7 +68,27 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.panel1.Size = new System.Drawing.Size(1333, 505);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // printUsers
+            // 
+            this.printUsers.BackColor = System.Drawing.Color.PowderBlue;
+            this.printUsers.BackgroundColor = System.Drawing.Color.PowderBlue;
+            this.printUsers.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.printUsers.BorderRadius = 0;
+            this.printUsers.BorderSize = 0;
+            this.printUsers.FlatAppearance.BorderSize = 0;
+            this.printUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printUsers.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.printUsers.ForeColor = System.Drawing.Color.Black;
+            this.printUsers.Location = new System.Drawing.Point(894, 9);
+            this.printUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.printUsers.Name = "printUsers";
+            this.printUsers.Size = new System.Drawing.Size(175, 39);
+            this.printUsers.TabIndex = 22;
+            this.printUsers.Text = "Print Users";
+            this.printUsers.TextColor = System.Drawing.Color.Black;
+            this.printUsers.UseVisualStyleBackColor = false;
+            this.printUsers.Click += new System.EventHandler(this.printUsers_Click);
             // 
             // deleteBtn
             // 
@@ -79,7 +101,7 @@
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.deleteBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteBtn.Location = new System.Drawing.Point(726, 9);
+            this.deleteBtn.Location = new System.Drawing.Point(713, 9);
             this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(175, 39);
@@ -100,7 +122,7 @@
             this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.registerBtn.ForeColor = System.Drawing.Color.Black;
-            this.registerBtn.Location = new System.Drawing.Point(342, 9);
+            this.registerBtn.Location = new System.Drawing.Point(351, 9);
             this.registerBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(175, 39);
@@ -117,6 +139,7 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Pink;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -132,7 +155,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -161,7 +184,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1279, 387);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.s);
             // 
             // updateBtn
             // 
@@ -245,6 +267,7 @@
             this.IDTxt.BorderSize = 2;
             this.IDTxt.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.IDTxt.ForeColor = System.Drawing.Color.Black;
+            this.IDTxt.IsReadOnly = false;
             this.IDTxt.Location = new System.Drawing.Point(1065, 18);
             this.IDTxt.Margin = new System.Windows.Forms.Padding(5);
             this.IDTxt.Multiline = false;
@@ -268,6 +291,7 @@
             this.passwordTxtBox.BorderSize = 2;
             this.passwordTxtBox.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.passwordTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.passwordTxtBox.IsReadOnly = false;
             this.passwordTxtBox.Location = new System.Drawing.Point(277, 64);
             this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(5);
             this.passwordTxtBox.Multiline = false;
@@ -290,6 +314,7 @@
             this.usernameTxtBox.BorderSize = 2;
             this.usernameTxtBox.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.usernameTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.usernameTxtBox.IsReadOnly = false;
             this.usernameTxtBox.Location = new System.Drawing.Point(17, 64);
             this.usernameTxtBox.Margin = new System.Windows.Forms.Padding(5);
             this.usernameTxtBox.Multiline = false;
@@ -312,6 +337,7 @@
             this.emailTxtBox.BorderSize = 2;
             this.emailTxtBox.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.emailTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.emailTxtBox.IsReadOnly = false;
             this.emailTxtBox.Location = new System.Drawing.Point(797, 16);
             this.emailTxtBox.Margin = new System.Windows.Forms.Padding(5);
             this.emailTxtBox.Multiline = false;
@@ -334,6 +360,7 @@
             this.ageTxtBox.BorderSize = 2;
             this.ageTxtBox.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.ageTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.ageTxtBox.IsReadOnly = false;
             this.ageTxtBox.Location = new System.Drawing.Point(537, 16);
             this.ageTxtBox.Margin = new System.Windows.Forms.Padding(5);
             this.ageTxtBox.Multiline = false;
@@ -356,6 +383,7 @@
             this.lastnameTxtBox.BorderSize = 2;
             this.lastnameTxtBox.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.lastnameTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.lastnameTxtBox.IsReadOnly = false;
             this.lastnameTxtBox.Location = new System.Drawing.Point(277, 16);
             this.lastnameTxtBox.Margin = new System.Windows.Forms.Padding(5);
             this.lastnameTxtBox.Multiline = false;
@@ -378,6 +406,7 @@
             this.firstnameTxtBox.BorderSize = 2;
             this.firstnameTxtBox.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.firstnameTxtBox.ForeColor = System.Drawing.Color.Black;
+            this.firstnameTxtBox.IsReadOnly = false;
             this.firstnameTxtBox.Location = new System.Drawing.Point(17, 16);
             this.firstnameTxtBox.Margin = new System.Windows.Forms.Padding(5);
             this.firstnameTxtBox.Multiline = false;
@@ -396,6 +425,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
+            this.BackgroundImage = global::StudentFeedbacksandSuggestionSystem.Properties.Resources.MainBackgroundImage;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1333, 615);
             this.Controls.Add(this.roleComboBox);
             this.Controls.Add(this.genderComboBox);
@@ -407,6 +438,7 @@
             this.Controls.Add(this.lastnameTxtBox);
             this.Controls.Add(this.firstnameTxtBox);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminUsers";
@@ -433,5 +465,6 @@
         private CustomControls.CustomButton registerBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private CustomControls.CustomButton deleteBtn;
+        private CustomControls.CustomButton printUsers;
     }
 }

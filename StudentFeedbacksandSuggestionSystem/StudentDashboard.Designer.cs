@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.homeButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
@@ -36,6 +37,8 @@
             this.logoutButton = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.usersName = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.usersName);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -170,6 +174,17 @@
             this.mainPanel.Size = new System.Drawing.Size(1924, 885);
             this.mainPanel.TabIndex = 5;
             // 
+            // usersName
+            // 
+            this.usersName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.usersName.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersName.Location = new System.Drawing.Point(92, 0);
+            this.usersName.Name = "usersName";
+            this.usersName.Size = new System.Drawing.Size(711, 68);
+            this.usersName.TabIndex = 2;
+            this.usersName.Text = "User\'s Name";
+            this.usersName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // StudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,6 +199,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1942, 1000);
+            this.MinimumSize = new System.Drawing.Size(1918, 1000);
             this.Name = "StudentDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentDashboard";
@@ -203,5 +220,7 @@
         private CustomControls.CustomButton homeButton;
         private CustomControls.CustomButton settingsButton;
         private CustomControls.CustomButton logoutButton;
+        private System.Windows.Forms.Label usersName;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -18,28 +18,46 @@ namespace StudentFeedbacksandSuggestionSystem
         public StudentDashboard(UserInfo userInfo, FormManager formManager)
         {
             InitializeComponent();
-            loadPage(new Home(userInfo));
+            timer1.Interval = 1000;
+            LoadPage(new Home(userInfo));
             this.userInfo = userInfo;
             this.formManager = formManager;
+            usersName.Text = userInfo.Firstname + " " + userInfo.Lastname;
         }
 
-        public void loadingScreen()
+        public void LoadPage(Form form)
         {
+            LoadingScreen loadingScreen = new LoadingScreen();
 
-        }
-
-        public void loadPage(Form form)
-        {
             if (mainPanel.Controls.Count > 0)
             {
                 mainPanel.Controls[0].Dispose();
                 mainPanel.Controls.Clear();
             }
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            mainPanel.Controls.Add(form);
-            form.Show();
+            loadingScreen.TopLevel = false;
+            loadingScreen.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Add(loadingScreen);
+            loadingScreen.Show();
+
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += (sender, e) =>
+            {
+                loadingScreen.Hide();
+
+                form.TopLevel = false;
+                form.Dock = DockStyle.Fill;
+
+                mainPanel.Controls.Add(form);
+                form.Show();
+
+                timer.Stop();
+            };
+
+            timer.Start();
         }
+
 
         private void SetButtonBorders(Button selectedButton)
         {
@@ -51,19 +69,19 @@ namespace StudentFeedbacksandSuggestionSystem
         private void homeButton_Click(object sender, EventArgs e)
         {
             SetButtonBorders(homeButton);
-            loadPage(new Home(userInfo));
+            LoadPage(new Home(userInfo));
         }
 
         private void profileButton_Click(object sender, EventArgs e)
         {
             SetButtonBorders(profileButton);
-            loadPage(new Profile(userInfo));
+            LoadPage(new Profile(userInfo));
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
             SetButtonBorders(settingsButton);
-            loadPage(new Settings(userInfo));
+            LoadPage(new Settings(userInfo));
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

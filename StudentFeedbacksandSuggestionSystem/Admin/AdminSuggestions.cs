@@ -31,13 +31,19 @@ namespace StudentFeedbacksandSuggestionSystem.Admin
 
         private void printReport_Click(object sender, EventArgs e)
         {
-            ReportViewer reportViewer = new ReportViewer();
+            ReportViewer reportViewer = new ReportViewer("Suggestions.rpt");
             reportViewer.ShowDialog();
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
             DBFunction.DBFunction.SearchSuggestion(searchTxtBox.Texts, searchByComboBox.Texts, dataGridView1);
+        }
+
+        private void printMostVotes_Click(object sender, EventArgs e)
+        {
+            ReportViewer reportViewer = new ReportViewer("MostVotes.rpt");
+            reportViewer.ShowDialog();
         }
     }
 }

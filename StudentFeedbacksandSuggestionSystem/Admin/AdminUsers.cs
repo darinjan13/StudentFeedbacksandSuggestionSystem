@@ -16,14 +16,10 @@ namespace StudentFeedbacksandSuggestionSystem
         string firstname, lastname, email, gender, username, password, role;
         int ID, age;
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void printUsers_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void s(object sender, DataGridViewCellEventArgs e)
-        {
-
+            ReportViewer reportViewer = new ReportViewer("Users.rpt");
+            reportViewer.ShowDialog();
         }
 
         public AdminUsers()
@@ -63,7 +59,7 @@ namespace StudentFeedbacksandSuggestionSystem
             email = emailTxtBox.Texts;
             username = usernameTxtBox.Texts;
             password = passwordTxtBox.Texts;
-            gender = genderComboBox.Texts.ToLower();
+            gender = genderComboBox.Texts;
             role = roleComboBox.Texts.ToLower();
             if(DBFunction.DBFunction.Register(firstname, lastname, age, email, gender, username, password, role))
             {
@@ -82,7 +78,7 @@ namespace StudentFeedbacksandSuggestionSystem
             email = emailTxtBox.Texts;
             username = usernameTxtBox.Texts;
             password = passwordTxtBox.Texts;
-            gender = genderComboBox.Texts.ToLower();
+            gender = genderComboBox.Texts;
             role = roleComboBox.Texts.ToLower();
             if(DBFunction.DBFunction.Update(ID, firstname, lastname, age, email, gender, username, password, role))
             {

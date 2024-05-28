@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace StudentFeedbacksandSuggestionSystem {
+namespace StudentFeedbacksandSuggestionSystem.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace StudentFeedbacksandSuggestionSystem {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Suggestions : ReportClass {
+    public class Users : ReportClass {
         
-        public Suggestions() {
+        public Users() {
         }
         
         public override string ResourceName {
             get {
-                return "Suggestions.rpt";
+                return "Users.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace StudentFeedbacksandSuggestionSystem {
         
         public override string FullResourceName {
             get {
-                return "StudentFeedbacksandSuggestionSystem.Suggestions.rpt";
+                return "StudentFeedbacksandSuggestionSystem.Reports.Users.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace StudentFeedbacksandSuggestionSystem {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedSuggestions : Component, ICachedReport {
+    public class CachedUsers : Component, ICachedReport {
         
-        public CachedSuggestions() {
+        public CachedUsers() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace StudentFeedbacksandSuggestionSystem {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Suggestions rpt = new Suggestions();
+            Users rpt = new Users();
             rpt.Site = this.Site;
             return rpt;
         }

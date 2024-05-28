@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.suggestionsLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.fullnameLabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.titleTxtBox = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
             this.addSuggestion = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomButton();
             this.suggestionMessage = new StudentFeedbacksandSuggestionSystem.CustomControls.CustomTextBox();
+            this.suggestionsLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -82,16 +82,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(538, 363);
             this.panel5.TabIndex = 1;
-            // 
-            // suggestionsLayout
-            // 
-            this.suggestionsLayout.AutoScroll = true;
-            this.suggestionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suggestionsLayout.Location = new System.Drawing.Point(0, 0);
-            this.suggestionsLayout.Margin = new System.Windows.Forms.Padding(4);
-            this.suggestionsLayout.Name = "suggestionsLayout";
-            this.suggestionsLayout.Size = new System.Drawing.Size(538, 363);
-            this.suggestionsLayout.TabIndex = 0;
             // 
             // fullnameLabel
             // 
@@ -214,6 +204,16 @@
             this.suggestionMessage.Texts = "";
             this.suggestionMessage.UnderlinedStyle = false;
             // 
+            // suggestionsLayout
+            // 
+            this.suggestionsLayout.AutoScroll = true;
+            this.suggestionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suggestionsLayout.Location = new System.Drawing.Point(0, 0);
+            this.suggestionsLayout.Margin = new System.Windows.Forms.Padding(4);
+            this.suggestionsLayout.Name = "suggestionsLayout";
+            this.suggestionsLayout.Size = new System.Drawing.Size(538, 363);
+            this.suggestionsLayout.TabIndex = 0;
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,10 +244,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.FlowLayoutPanel suggestionsLayout;
         private System.Windows.Forms.Panel panel6;
         private CustomControls.CustomTextBox titleTxtBox;
         private CustomControls.CustomButton addSuggestion;
         private CustomControls.CustomTextBox suggestionMessage;
+        private System.Windows.Forms.FlowLayoutPanel suggestionsLayout;
     }
 }

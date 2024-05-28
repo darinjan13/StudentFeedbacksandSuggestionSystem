@@ -1,4 +1,6 @@
-﻿namespace StudentFeedbacksandSuggestionSystem
+﻿using StudentFeedbacksandSuggestionSystem.Reports;
+
+namespace StudentFeedbacksandSuggestionSystem
 {
     partial class ReportViewer
     {
@@ -29,12 +31,12 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Suggestions1 = new StudentFeedbacksandSuggestionSystem.Suggestions();
+            this.Suggestions1 = new StudentFeedbacksandSuggestionSystem.Reports.Suggestions();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.DisplayToolbar = false;
@@ -42,7 +44,6 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Suggestions1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(1378, 554);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -54,7 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 554);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportViewer";
             this.Text = "RerportViewer";
             this.ResumeLayout(false);

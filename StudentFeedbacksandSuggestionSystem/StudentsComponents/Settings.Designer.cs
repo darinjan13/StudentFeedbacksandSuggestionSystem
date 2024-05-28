@@ -46,7 +46,7 @@
             this.flowLayoutPanel1.Controls.Add(this.emailTxtBox);
             this.flowLayoutPanel1.Controls.Add(this.usernameTxt);
             this.flowLayoutPanel1.Controls.Add(this.passwordTxt);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(419, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(418, 82);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(258, 226);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(549, 243);
+            this.saveBtn.Location = new System.Drawing.Point(548, 313);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(150, 40);
             this.saveBtn.TabIndex = 6;
@@ -82,7 +82,7 @@
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Location = new System.Drawing.Point(393, 243);
+            this.editBtn.Location = new System.Drawing.Point(392, 313);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(150, 40);
             this.editBtn.TabIndex = 5;

@@ -34,10 +34,10 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayout1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.latestSuggestionsLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.latestSuggestionsLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.flowLayout1.SuspendLayout();
@@ -54,13 +54,13 @@
             this.suggestionsLayout.Location = new System.Drawing.Point(0, 0);
             this.suggestionsLayout.Margin = new System.Windows.Forms.Padding(0);
             this.suggestionsLayout.Name = "suggestionsLayout";
-            this.suggestionsLayout.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.suggestionsLayout.Size = new System.Drawing.Size(900, 550);
+            this.suggestionsLayout.Padding = new System.Windows.Forms.Padding(5);
+            this.suggestionsLayout.Size = new System.Drawing.Size(839, 552);
             this.suggestionsLayout.TabIndex = 10;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(13, 12);
@@ -77,7 +77,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(13, 12);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1278, 550);
+            this.panel5.Size = new System.Drawing.Size(1280, 552);
             this.panel5.TabIndex = 11;
             // 
             // flowLayout1
@@ -86,11 +86,11 @@
             this.flowLayout1.Controls.Add(this.panel2);
             this.flowLayout1.Controls.Add(this.panel3);
             this.flowLayout1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayout1.Location = new System.Drawing.Point(900, 0);
+            this.flowLayout1.Location = new System.Drawing.Point(839, 0);
             this.flowLayout1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayout1.Name = "flowLayout1";
             this.flowLayout1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.flowLayout1.Size = new System.Drawing.Size(378, 550);
+            this.flowLayout1.Size = new System.Drawing.Size(441, 552);
             this.flowLayout1.TabIndex = 1;
             // 
             // panel2
@@ -100,8 +100,18 @@
             this.panel2.Location = new System.Drawing.Point(13, 86);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(350, 450);
+            this.panel2.Size = new System.Drawing.Size(413, 452);
             this.panel2.TabIndex = 3;
+            // 
+            // latestSuggestionsLayout
+            // 
+            this.latestSuggestionsLayout.AutoScroll = true;
+            this.latestSuggestionsLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.latestSuggestionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.latestSuggestionsLayout.Location = new System.Drawing.Point(0, 0);
+            this.latestSuggestionsLayout.Name = "latestSuggestionsLayout";
+            this.latestSuggestionsLayout.Size = new System.Drawing.Size(413, 452);
+            this.latestSuggestionsLayout.TabIndex = 0;
             // 
             // panel3
             // 
@@ -110,7 +120,7 @@
             this.panel3.Location = new System.Drawing.Point(13, 12);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(350, 74);
+            this.panel3.Size = new System.Drawing.Size(413, 74);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -121,19 +131,10 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.label1.Size = new System.Drawing.Size(350, 74);
+            this.label1.Size = new System.Drawing.Size(413, 74);
             this.label1.TabIndex = 0;
             this.label1.Text = "Most Up Votes";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // latestSuggestionsLayout
-            // 
-            this.latestSuggestionsLayout.AutoScroll = true;
-            this.latestSuggestionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.latestSuggestionsLayout.Location = new System.Drawing.Point(0, 0);
-            this.latestSuggestionsLayout.Name = "latestSuggestionsLayout";
-            this.latestSuggestionsLayout.Size = new System.Drawing.Size(350, 450);
-            this.latestSuggestionsLayout.TabIndex = 0;
             // 
             // Home
             // 

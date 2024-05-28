@@ -21,11 +21,13 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
         bool sorted;
         bool profile;
 
-        public SuggestionCard(UserInfo userInfo, SuggestionsInfo suggestionsInfo,bool sorted)
+        public SuggestionCard(Home home, UserInfo userInfo, SuggestionsInfo suggestionsInfo,bool sorted)
         {
             InitializeComponent();
+            this.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             this.suggestionsInfo = suggestionsInfo;
             this.userInfo = userInfo;
+            this.home = home;
             SetLabelValue();
             this.sorted = sorted;
             timer1.Interval = 1000;
@@ -142,6 +144,7 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
 
                         downvoteBtn.Cursor = Cursors.Hand;
                         downvoteBtn.IconColor = Color.Black;
+                        downvoteBtn.Enabled = true;
 
                         SetLabelValue();
                         loadingScreen.Hide();
@@ -150,7 +153,7 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
                         HasUserVoted();
                         if (suggestionsInfo.Votes > 10)
                         {
-                            //home.DisplayMostVotes();
+                            home.DisplayMostVotes();
                         }
                         voteCounts.Text = suggestionsInfo.Votes.ToString();
                     }
@@ -181,12 +184,16 @@ namespace StudentFeedbacksandSuggestionSystem.CustomControls
 
                         upvoteBtn.Cursor = Cursors.Hand;
                         upvoteBtn.IconColor = Color.Black;
+                        upvoteBtn.Enabled = true;
 
                         loadingScreen.Hide();
                         panel1.Show();
                         timer1.Stop();
                         HasUserVoted();
-                        //home.DisplayMostVotes();
+                        if (suggestionsInfo.Votes > 10)
+                        {
+                            home.DisplayMostVotes();
+                        }
                         voteCounts.Text = suggestionsInfo.Votes.ToString();
                     }
                 };

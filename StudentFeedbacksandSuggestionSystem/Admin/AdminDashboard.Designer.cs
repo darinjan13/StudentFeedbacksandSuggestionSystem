@@ -43,7 +43,7 @@
             // 
             this.greetingslbl.AutoSize = true;
             this.greetingslbl.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greetingslbl.ForeColor = System.Drawing.Color.White;
+            this.greetingslbl.ForeColor = System.Drawing.Color.Black;
             this.greetingslbl.Location = new System.Drawing.Point(588, 75);
             this.greetingslbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.greetingslbl.Name = "greetingslbl";
@@ -61,14 +61,14 @@
             this.logoutButton.FlatAppearance.BorderSize = 0;
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("Georgia", 10.2F);
-            this.logoutButton.ForeColor = System.Drawing.Color.White;
+            this.logoutButton.ForeColor = System.Drawing.Color.Black;
             this.logoutButton.Location = new System.Drawing.Point(1720, 4);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(200, 49);
             this.logoutButton.TabIndex = 9;
             this.logoutButton.Text = "Logout";
-            this.logoutButton.TextColor = System.Drawing.Color.White;
+            this.logoutButton.TextColor = System.Drawing.Color.Black;
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
@@ -108,14 +108,14 @@
             this.suggestionsPanel.FlatAppearance.BorderSize = 0;
             this.suggestionsPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.suggestionsPanel.Font = new System.Drawing.Font("Georgia", 10.2F);
-            this.suggestionsPanel.ForeColor = System.Drawing.Color.White;
+            this.suggestionsPanel.ForeColor = System.Drawing.Color.Black;
             this.suggestionsPanel.Location = new System.Drawing.Point(1512, 4);
             this.suggestionsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.suggestionsPanel.Name = "suggestionsPanel";
             this.suggestionsPanel.Size = new System.Drawing.Size(200, 49);
             this.suggestionsPanel.TabIndex = 10;
             this.suggestionsPanel.Text = "Suggestions";
-            this.suggestionsPanel.TextColor = System.Drawing.Color.White;
+            this.suggestionsPanel.TextColor = System.Drawing.Color.Black;
             this.suggestionsPanel.UseVisualStyleBackColor = false;
             this.suggestionsPanel.Click += new System.EventHandler(this.suggestionsPanel_Click);
             // 
@@ -129,24 +129,24 @@
             this.usersPanel.FlatAppearance.BorderSize = 0;
             this.usersPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usersPanel.Font = new System.Drawing.Font("Georgia", 10.2F);
-            this.usersPanel.ForeColor = System.Drawing.Color.White;
+            this.usersPanel.ForeColor = System.Drawing.Color.Black;
             this.usersPanel.Location = new System.Drawing.Point(1304, 4);
             this.usersPanel.Margin = new System.Windows.Forms.Padding(4);
             this.usersPanel.Name = "usersPanel";
             this.usersPanel.Size = new System.Drawing.Size(200, 49);
             this.usersPanel.TabIndex = 11;
             this.usersPanel.Text = "Users";
-            this.usersPanel.TextColor = System.Drawing.Color.White;
+            this.usersPanel.TextColor = System.Drawing.Color.Black;
             this.usersPanel.UseVisualStyleBackColor = false;
             this.usersPanel.Click += new System.EventHandler(this.usersPanel_Click);
             // 
             // mainPanel
             // 
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainPanel.Location = new System.Drawing.Point(0, 383);
+            this.mainPanel.Location = new System.Drawing.Point(0, 346);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1924, 672);
+            this.mainPanel.Size = new System.Drawing.Size(1924, 709);
             this.mainPanel.TabIndex = 10;
             // 
             // AdminDashboard

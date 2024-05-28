@@ -34,7 +34,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                StudentsComponents.DisplaySuggestions displaySuggestions = new StudentsComponents.DisplaySuggestions(suggestions.Votes, suggestions.Title);
+                StudentsComponents.DisplaySuggestions displaySuggestions = new StudentsComponents.DisplaySuggestions(suggestions.Votes, suggestions.Title, suggestions.TimeDifference);
                 displaySuggestions.TopLevel = false;
                 displaySuggestions.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 

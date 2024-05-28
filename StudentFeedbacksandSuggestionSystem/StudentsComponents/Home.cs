@@ -28,6 +28,7 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             latestSuggestionsLayout.Hide();
             loadingScreen.TopLevel = false;
+            loadingScreen.Dock = DockStyle.Fill;
             panel2.Controls.Add(loadingScreen);
             loadingScreen.Show();
 
@@ -43,9 +44,8 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
                     foreach (var suggestions in sortedSuggestions)
                     {
-                        StudentsComponents.DisplaySuggestions displaySuggestions = new StudentsComponents.DisplaySuggestions(suggestions.Votes, suggestions.Title);
+                        StudentsComponents.DisplaySuggestions displaySuggestions = new StudentsComponents.DisplaySuggestions(suggestions.Votes, suggestions.Title, suggestions.TimeDifference);
                         displaySuggestions.TopLevel = false;
-                        displaySuggestions.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 
                         latestSuggestionsLayout.Controls.Add(displaySuggestions);
                         displaySuggestions.Show();
@@ -74,9 +74,8 @@ namespace StudentFeedbacksandSuggestionSystem.StudentsComponents
 
             foreach (var suggestions in sortedSuggestions)
             {
-                SuggestionCard suggestionCard = new SuggestionCard(userInfo, suggestions, false);
+                SuggestionCard suggestionCard = new SuggestionCard(this, userInfo, suggestions, false);
                 suggestionCard.TopLevel = false;
-                
                 suggestionsLayout.Controls.Add(suggestionCard);
                 suggestionCard.Show();
             }

@@ -44,7 +44,7 @@
             this.progressBar1.BackColor = System.Drawing.Color.White;
             this.progressBar1.ForeColor = System.Drawing.Color.Transparent;
             this.progressBar1.Location = new System.Drawing.Point(-1, 0);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(1444, 16);
             this.progressBar1.TabIndex = 5;
@@ -60,12 +60,12 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(195, 202);
+            this.label3.Location = new System.Drawing.Point(362, 202);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(927, 40);
+            this.label3.Size = new System.Drawing.Size(665, 40);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Student Feedbacks and Suggestion Management System";
+            this.label3.Text = "Student Suggestion Management System";
             // 
             // button1
             // 
@@ -77,8 +77,8 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(564, 377);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(592, 377);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 39);
             this.button1.TabIndex = 10;
@@ -90,9 +90,9 @@
             // 
             this.register.BackColor = System.Drawing.Color.Transparent;
             this.register.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.register.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.register.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.register.ForeColor = System.Drawing.Color.Black;
-            this.register.Location = new System.Drawing.Point(733, 441);
+            this.register.Location = new System.Drawing.Point(761, 441);
             this.register.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.register.Name = "register";
             this.register.Size = new System.Drawing.Size(85, 25);
@@ -105,10 +105,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(500, 441);
+            this.label5.Location = new System.Drawing.Point(486, 441);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(232, 25);
+            this.label5.Size = new System.Drawing.Size(274, 25);
             this.label5.TabIndex = 12;
             this.label5.Text = "Don\'t have an account yet?";
             // 
@@ -121,11 +121,12 @@
             this.txtusername.BorderSize = 2;
             this.txtusername.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.txtusername.ForeColor = System.Drawing.Color.Black;
-            this.txtusername.Location = new System.Drawing.Point(531, 268);
-            this.txtusername.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtusername.IsReadOnly = false;
+            this.txtusername.Location = new System.Drawing.Point(559, 268);
+            this.txtusername.Margin = new System.Windows.Forms.Padding(5);
             this.txtusername.Multiline = false;
             this.txtusername.Name = "txtusername";
-            this.txtusername.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.txtusername.Padding = new System.Windows.Forms.Padding(9);
             this.txtusername.PasswordChar = false;
             this.txtusername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtusername.PlaceholderText = "Username";
@@ -144,8 +145,9 @@
             this.txtpassword.BorderSize = 2;
             this.txtpassword.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.txtpassword.ForeColor = System.Drawing.Color.Black;
-            this.txtpassword.Location = new System.Drawing.Point(531, 319);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtpassword.IsReadOnly = false;
+            this.txtpassword.Location = new System.Drawing.Point(559, 318);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtpassword.Multiline = false;
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Padding = new System.Windows.Forms.Padding(13, 9, 13, 9);
@@ -175,7 +177,7 @@
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;

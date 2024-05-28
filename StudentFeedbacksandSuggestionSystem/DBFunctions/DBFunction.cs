@@ -361,10 +361,20 @@ namespace StudentFeedbacksandSuggestionSystem.DBFunction
 
                         if ((upVote && existingUpVote) || (!upVote && existingDownVote))
                         {
-                            // User is trying to vote the same way again; no action needed
                             Connection.Connection.conn.Close();
                             return true;
                         }
+                    }
+                    else
+                    {
+                    string insertVoteQuery = "INSERT INTO users_voted (user_id, suggestion_id, up_vote, down_vote) VALUES (?, ?, ?, ?)";
+                    OleDbCommand insertVoteCommand = new OleDbCommand(insertVoteQuery, Connection.Connection.conn);
+                    insertVoteCommand.Parameters.AddWithValue("@user_id", user_id);
+                    insertVoteCommand.Parameters.AddWithValue("@suggestion_id", suggestion_id);
+                    insertVoteCommand.Parameters.AddWithValue("@up_vote", upVote);
+                    insertVoteCommand.Parameters.AddWithValue("@down_vote", !upVote);
+
+                    insertVoteCommand.ExecuteNonQuery();
                     }
 
                 query = upVote
